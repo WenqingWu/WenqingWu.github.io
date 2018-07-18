@@ -1,148 +1,173 @@
-<!DOCTYPE HTML>
-<html>
-<head >
-  <meta charset="utf-8">
-  
-  <title>mTCP Code Reading | Victor&#39;s Blog | 动者静之基，清者浊之源</title>
+<!DOCTYPE html>
+<html lang="en">
 
-  
-  <meta name="author" content="Victor">
-  
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Victor&#39;s Blog" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        mTCP Code Reading｜undefined
+        
+    </title>
 
-  
-  <meta name="description" content="一直以来，网络协议栈都和内核密切相关，内核作为操作系统的控制者，也是负责网络资源分配的最佳人选。随着Linux系统的不断壮大，内核协议栈的功能性能和稳定性都得到了高度认可。
-现在互联网业务蒸蒸日上，本该是性能瓶颈的网络传输，被聪明的开发者们通过集群、分布式等方式不断优化，将网络业务的力量不断提高。但">
-  
+    <link rel="canonical" href="https://yoursite.com/2018/07/18/mTCP-Code-Reading/">
 
-  
-  
-  <meta name="keywords" content="">
-  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
 
-  <meta property="og:title" content="mTCP Code Reading"/>
-
-  <meta property="og:site_name" content="Victor&#39;s Blog"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-  
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5005349780815724",
-    enable_page_level_ads: true
-  });
-</script>
-
-  
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?223eea22355699157e147870eb124b24";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-  <link rel="manifest" href="/manifest.json">
-  <link href="/favicon.ico" rel="icon">
-
-  <link rel="alternate" href="/atom.xml" title="Victor&#39;s Blog" type="application/atom+xml">
-  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/base/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-
-
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
 </head>
 
+<style>
 
-<body>
-<div class="blog">
-  <div class="content">
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Victor&#39;s Blog
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
 
     
+</style>
 
-    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header page-scroll">
-          <button type="button" id="tglBtn" class="navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Victor</a>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>mTCP Code Reading</h1>
+                    
+                    <span class="meta">
+                         作者 Victor
+                        <span>
+                          日期 2018-07-18
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="bosenyblog-navbar">
-          <div class="navbar-collapse" id="bs-example-navbar-collapse-6">
-            <ul class="nav navbar-nav navbar-right">
-            
-              <li><a href="/">Home</a></li>
-            
-              <li><a href="/archives">Archives</a></li>
-            
-              <li><a href="/about">About</a></li>
-            
-              <li><a href="/tags">Tags</a></li>
-            
-            </ul>
-          </div>
-        </div>
-
     </div>
- </nav>
- <div class="gotop-btn">
-
- </div>
+    <div class="post-title-haojen">
+        <span>
+            mTCP Code Reading
+        </span>
+    </div>
 </header>
 
-        
-          <div class="container ">
-          <div class="row">
-            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container" style="position: inherit;">
-            <article class="article-container ">
-
-  
-    
-    <h3 class="article-title"><span>mTCP Code Reading</span></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/07/18/mTCP-Code-Reading/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-07-18T09:24:25.000Z">
-          2018-07-18
-        </time>
-      </a>
-    </span>
-    <br />
-    
-    <span id="busuanzi_container_page_pv">
-      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-    </span>
-    
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-          <p>一直以来，网络协议栈都和内核密切相关，内核作为操作系统的控制者，也是负责网络资源分配的最佳人选。随着Linux系统的不断壮大，内核协议栈的功能性能和稳定性都得到了高度认可。</p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>一直以来，网络协议栈都和内核密切相关，内核作为操作系统的控制者，也是负责网络资源分配的最佳人选。随着Linux系统的不断壮大，内核协议栈的功能性能和稳定性都得到了高度认可。</p>
 <p>现在互联网业务蒸蒸日上，本该是性能瓶颈的网络传输，被聪明的开发者们通过集群、分布式等方式不断优化，将网络业务的力量不断提高。但随之而来，Linux内核作为一个调度者，不适宜对外提供业务服务，也不适合占用系统资源，无论多么巧妙的开发技巧，都存在面对单点性能瓶颈的问题。</p>
 <p>而用户态协议栈，可以让Linux内核更专注系统的控制调度；将复杂的协议处理放到用户态，使用更多的系统资源，提供给开发者更自由的环境，做更多更酷的的事。</p>
 <p>自己之前做过mTCP在x86和ARM（需要对mTCP的IO部分做一些修改才能在ARM下编译运行）下的测试工作，主要是测试吞吐和尾延迟，去年还做过一段时间将Web应用向mTCP移植的工作。总之，对mTCP的基本工作有一定的了解，但是没有深度调研mTCP的工作流程。近期由于工作需要，准备阅读mTCP的源码，梳理其代码结构和mTCP应用的工作流程。</p>
@@ -169,158 +194,161 @@ var _hmt = _hmt || [];
 <h3 id="epoll-API"><a href="#epoll-API" class="headerlink" title="epoll API"></a>epoll API</h3><h5 id="int-mtcp-epoll-create-mctx-t-mctx-int-size"><a href="#int-mtcp-epoll-create-mctx-t-mctx-int-size" class="headerlink" title="int mtcp_epoll_create(mctx_t mctx, int size)"></a>int mtcp_epoll_create(mctx_t mctx, int size)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在每个核的线程初始化的时候进行调用</span></span><br></pre></td></tr></table></figure>
 <h5 id="mtcp-epoll-ctl"><a href="#mtcp-epoll-ctl" class="headerlink" title="mtcp_epoll_ctl()"></a>mtcp_epoll_ctl()</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用于对MTCP_EPOLL_CTL_ADD，MTCP_EPOLL_CTL_MOD, MTCP_EPOLL_CTL_DEL三种epoll事件操作的处理</span></span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    
-  </div>
+                <hr>
+                
 
-  <div class="article-footer">
-    <div class="article-meta pull-left">
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/07/17/hexo introduction/" data-toggle="tooltip" data-placement="top"
+                           title="hexo使用简介">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
 
-    
+                
 
-    
-
-    </div>
-
-    
-  </div>
-  
-    
-    
-  
-</article>
-   
-    <div id="toc" class="toc-article ">
-    <div class="toc-title">目录</div>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mTCP-应用程序代码结构"><span class="toc-number">1.</span> <span class="toc-text">mTCP 应用程序代码结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部分mTCP-API"><span class="toc-number">2.</span> <span class="toc-text">部分mTCP API</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#int-mtcp-init-const-char-config-file"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">int mtcp_init(const char *config_file)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mctx-t-mtcp-create-context-int-cpu"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">mctx_t mtcp_create_context(int cpu)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socketAPI"><span class="toc-number">2.1.</span> <span class="toc-text">socketAPI</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#int-mtcp-socket-mctx-t-mctx-int-domain-int-type-int-protocol"><span class="toc-number">2.1.0.1.</span> <span class="toc-text">int mtcp_socket(mctx_t mctx, int domain, int type, int protocol)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int-mtcp-listen-mctx-t-mctx-int-sockid-int-backlog"><span class="toc-number">2.1.0.2.</span> <span class="toc-text">int mtcp_listen(mctx_t mctx, int sockid, int backlog)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int-mtcp-accept-mctx-t-mctx-int-sockid-struct-sockaddr-addr-socklen-t-addrlen"><span class="toc-number">2.1.0.3.</span> <span class="toc-text">int mtcp_accept(mctx_t mctx, int sockid, struct sockaddr addr, socklen_t addrlen)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ssize-t-mtcp-recv-mctx-t-mctx-int-sockid-char-buf-size-t-len-int-flags"><span class="toc-number">2.1.0.4.</span> <span class="toc-text">ssize_t mtcp_recv(mctx_t mctx, int sockid, char *buf, size_t len, int flags)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ssize-t-mtcp-write-mctx-t-mctx-int-sockid-const-char-buf-size-t-len"><span class="toc-number">2.1.0.5.</span> <span class="toc-text">ssize_t mtcp_write(mctx_t mctx, int sockid, const char *buf, size_t len)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协议栈触发API"><span class="toc-number">2.2.</span> <span class="toc-text">协议栈触发API</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#static-void-RunMainLoop-struct-mtcp-thread-context-ctx"><span class="toc-number">2.2.0.1.</span> <span class="toc-text">static void RunMainLoop(struct mtcp_thread_context *ctx)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int-ProcessTCPPacket-mtcp-manager-t-mtcp-uint32-t-cur-ts-const-int-ifidx-const-struct-iphdr-iph-int-ip-len"><span class="toc-number">2.2.0.2.</span> <span class="toc-text">int ProcessTCPPacket(mtcp_manager_t mtcp, uint32_t cur_ts, const int ifidx, const struct iphdr *iph, int ip_len)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static-inline-void-FlushEpollEvents-mtcp-manager-t-mtcp-uint32-t-cur-ts"><span class="toc-number">2.2.0.3.</span> <span class="toc-text">static inline void FlushEpollEvents(mtcp_manager_t mtcp, uint32_t cur_ts)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static-inline-void-HandleApplicationCalls-mtcp-manager-t-mtcp-uint32-t-cur-ts"><span class="toc-number">2.2.0.4.</span> <span class="toc-text">static inline void HandleApplicationCalls(mtcp_manager_t mtcp, uint32_t cur_ts)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static-inline-void-WritePacketsToChunks-mtcp-manager-t-mtcp-uint32-t-cur-ts"><span class="toc-number">2.2.0.5.</span> <span class="toc-text">static inline void WritePacketsToChunks(mtcp_manager_t mtcp, uint32_t cur_ts)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static-void-InterruptApplication-mtcp-manager-t-mtcp"><span class="toc-number">2.2.0.6.</span> <span class="toc-text">static void InterruptApplication(mtcp_manager_t mtcp)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#epoll-API"><span class="toc-number">2.3.</span> <span class="toc-text">epoll API</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#int-mtcp-epoll-create-mctx-t-mctx-int-size"><span class="toc-number">2.3.0.1.</span> <span class="toc-text">int mtcp_epoll_create(mctx_t mctx, int size)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mtcp-epoll-ctl"><span class="toc-number">2.3.0.2.</span> <span class="toc-text">mtcp_epoll_ctl()</span></a></li></ol></li></ol></li></ol></li></ol>
-</div>
+                
 
 
-  
+                <!--加入新的评论系统-->
+                
 
-	<!-- async load  -->
-	<script>
-			function async(u, c) {
-				var d = document, t = 'script',
-						o = d.createElement(t),
-						s = d.getElementsByTagName(t)[0];
-				o.src = u;
-				if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-				s.parentNode.insertBefore(o, s);
-			}
-	</script>
-	<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-	<script>
-			async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-					anchors.options = {
-						visible: 'hover',
-						placement: 'left',
-						// icon: '#'
-					};
-					anchors.add().remove('.article-title').remove('.subheading').remove('.sidebar-container h5');
-			})
-	</script>
-	<style>
-			/* place left on bigger screen */
-			@media all and (min-width: 800px) {
-					.anchorjs-link{
-							position: absolute;
-							left: -0.75em;
-							font-size: 1.1em;
-							margin-top : -0.1em;
-					}
-			}
-	</style>
+                
 
+            </div>
 
-
-
-<!-- UY BEGIN -->
-	<div id="gitment-container"></div>
-	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-	<script src="/js/web-pinyin.js"></script>
-	<script>
-		function toUnicode(s){ 
-			return s.replace(/([\u4E00-\u9FA5]|[\uFE30-\uFFA0])/g,function(){
-			return "\\u" + RegExp["$1"].charCodeAt(0).toString(16);
-			});
-		}
-		var title = 'mTCP Code Reading'
-		var GitHub_id = 'Boseny'
-		var client_id = 'f40c67d0359a2646d2b1'
-		var client_secret = '1cbedbd1a1a2e4b42901aee3d7afe1856c1b7e2d'
-		var repo = 'boseny.me'
-		var gitment = new Gitment({
-		// id: '页面 ID', // 可选。默认为 location.href
-		// id:"11" ,
-		id: title,
-		title: title,
-		owner: GitHub_id,//'你的 GitHub ID',
-		repo: repo,//'存储评论的 repo',
-		oauth: {
-			client_id: client_id,//'你的 client ID',
-			client_secret: client_secret,//'你的 client secret',
-		},
-		})
-		gitment.render('gitment-container')
-	</script>
-<!-- UY END -->
-
-
-
-
-            </main>
-          </div>
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mTCP-应用程序代码结构"><span class="toc-text">mTCP 应用程序代码结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部分mTCP-API"><span class="toc-text">部分mTCP API</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#int-mtcp-init-const-char-config-file"><span class="toc-text">int mtcp_init(const char *config_file)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mctx-t-mtcp-create-context-int-cpu"><span class="toc-text">mctx_t mtcp_create_context(int cpu)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socketAPI"><span class="toc-text">socketAPI</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#int-mtcp-socket-mctx-t-mctx-int-domain-int-type-int-protocol"><span class="toc-text">int mtcp_socket(mctx_t mctx, int domain, int type, int protocol)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int-mtcp-listen-mctx-t-mctx-int-sockid-int-backlog"><span class="toc-text">int mtcp_listen(mctx_t mctx, int sockid, int backlog)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int-mtcp-accept-mctx-t-mctx-int-sockid-struct-sockaddr-addr-socklen-t-addrlen"><span class="toc-text">int mtcp_accept(mctx_t mctx, int sockid, struct sockaddr addr, socklen_t addrlen)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ssize-t-mtcp-recv-mctx-t-mctx-int-sockid-char-buf-size-t-len-int-flags"><span class="toc-text">ssize_t mtcp_recv(mctx_t mctx, int sockid, char *buf, size_t len, int flags)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ssize-t-mtcp-write-mctx-t-mctx-int-sockid-const-char-buf-size-t-len"><span class="toc-text">ssize_t mtcp_write(mctx_t mctx, int sockid, const char *buf, size_t len)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协议栈触发API"><span class="toc-text">协议栈触发API</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#static-void-RunMainLoop-struct-mtcp-thread-context-ctx"><span class="toc-text">static void RunMainLoop(struct mtcp_thread_context *ctx)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int-ProcessTCPPacket-mtcp-manager-t-mtcp-uint32-t-cur-ts-const-int-ifidx-const-struct-iphdr-iph-int-ip-len"><span class="toc-text">int ProcessTCPPacket(mtcp_manager_t mtcp, uint32_t cur_ts, const int ifidx, const struct iphdr *iph, int ip_len)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static-inline-void-FlushEpollEvents-mtcp-manager-t-mtcp-uint32-t-cur-ts"><span class="toc-text">static inline void FlushEpollEvents(mtcp_manager_t mtcp, uint32_t cur_ts)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static-inline-void-HandleApplicationCalls-mtcp-manager-t-mtcp-uint32-t-cur-ts"><span class="toc-text">static inline void HandleApplicationCalls(mtcp_manager_t mtcp, uint32_t cur_ts)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static-inline-void-WritePacketsToChunks-mtcp-manager-t-mtcp-uint32-t-cur-ts"><span class="toc-text">static inline void WritePacketsToChunks(mtcp_manager_t mtcp, uint32_t cur_ts)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#static-void-InterruptApplication-mtcp-manager-t-mtcp"><span class="toc-text">static void InterruptApplication(mtcp_manager_t mtcp)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#epoll-API"><span class="toc-text">epoll API</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#int-mtcp-epoll-create-mctx-t-mctx-int-size"><span class="toc-text">int mtcp_epoll_create(mctx_t mctx, int size)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mtcp-epoll-ctl"><span class="toc-text">mtcp_epoll_ctl()</span></a></li></ol></li></ol></li></ol></li></ol>
+                </div>
+            </div>
         </div>
-       
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/BosenY/Lap" target="_blank">Lap</a>
-    <br/><span id="busuanzi_container_site_uv"> 
-  本站访客数<span id="busuanzi_value_site_uv"></span>人次
-</span>
-    </br>
-    
-      
-        &copy; 2018 Victor
-      
-    
-  </p>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Victor&#39;s Blog 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
 </footer>
-    
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-92842840-1', 'auto');
-    ga('send', 'pageview');
-
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
 </script>
 
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
 
-  </div>
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
 
-</div>
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  <script src="https://unpkg.com/draw-something/dist/draw.min.js"></script>
-  <script>
-    let maxNum = Number.parseInt('10')
-    let iconText = '❤'
-    let color = 'yellow'
-    new Draw({maxNum, iconText, color})
-  </script>
-
-<script src="/js/index.js"></script>
-<script src="/js/search.js"></script>
-
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
 </body>
+
 </html>
