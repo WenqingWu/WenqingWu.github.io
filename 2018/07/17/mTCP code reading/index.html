@@ -4,7 +4,7 @@
 <p>自己之前做过mTCP在x86和ARM（需要对mTCP的IO部分做一些修改才能在ARM下编译运行）下的测试工作，主要是测试吞吐和尾延迟，去年还做过一段时间将Web应用向mTCP移植的工作。总之，对mTCP的基本工作有一定的了解，但是没有深度调研mTCP的工作流程。近期由于工作需要，准备阅读mTCP的源码，梳理其代码结构和mTCP应用的工作流程。</p>
 <p>这里以mTCP示例程序epserver为例简要分析，如图所示</p>
 <h2 id="mTCP-应用程序代码结构"><a href="#mTCP-应用程序代码结构" class="headerlink" title="mTCP 应用程序代码结构"></a>mTCP 应用程序代码结构</h2><p>如图，是mTCP epserver中的函数调用流程</p>
-<p><img src="/17/mTCP code reading/mTCP-code-reading/mtcp-epserver-wu.png" alt=""></p>
+<p><img src="/17/mTCP code reading/mtcp-epserver-wu.png" alt=""></p>
 <h2 id="部分mTCP-API"><a href="#部分mTCP-API" class="headerlink" title="部分mTCP API"></a>部分mTCP API</h2><h5 id="int-mtcp-init-const-char-config-file"><a href="#int-mtcp-init-const-char-config-file" class="headerlink" title="int mtcp_init(const char *config_file)"></a>int mtcp_init(const char *config_file)</h5><p>只在application的main函数起来时初始化一次</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CreateAddressPool()</span><br><span class="line">SetRoutingTable()</span><br><span class="line">LoadARPTable()</span><br></pre></td></tr></table></figure>
 <h5 id="mctx-t-mtcp-create-context-int-cpu"><a href="#mctx-t-mtcp-create-context-int-cpu" class="headerlink" title="mctx_t mtcp_create_context(int cpu)"></a>mctx_t mtcp_create_context(int cpu)</h5><p>在每个核上都会被调用</p>
