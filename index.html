@@ -1,163 +1,214 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Victor&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Victor&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Victor&#39;s Blog">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Victor&#39;s Blog">
-  
-    <link rel="alternative" href="/atom.xml" title="Victor&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-  
-</head>
-<body>
-<div id="container">
-  <div id="wrap">
-    <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Victor&#39;s Blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">动者静之基，清者浊之源</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
-          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
-          <input type="submit" value="" class="search-form-submit">
-          <input name=tn type=hidden value="bds">
-          <input name=cl type=hidden value="3">
-          <input name=ct type=hidden value="2097152">
-          <input type="hidden" name="si" value="yoursite.com">
-        </form>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="Victor's Blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>Victor's Blog - 动者静之基，清者浊之源</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">Victor's Blog</a></h1>
+        <h2 class="subtitle">动者静之基，清者浊之源</h2>
       </div>
+      
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+      
     </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/" class="current">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
   </div>
 </header>
-    <div class="outer">
-      <section id="main">
-  
-    <article id="post-mTCP代码阅读" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/17/mTCP代码阅读/" class="article-date">
-  <time datetime="2018-07-17T10:45:19.000Z" itemprop="datePublished">2018-07-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/mTCP代码阅读/">mTCP代码阅读</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+
+<div id="index" class="index">
+  
+  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/mTCP代码阅读/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Victor">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="Victor's Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/07/17/mTCP代码阅读/" itemprop="url">mTCP代码阅读</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-17T18:45:19+08:00">2018-07-17 18:45:19</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
-        <p>这里以mTCP示例程序epserver为例，梳理mTCP的代码结构和mTCP应用的工作流程</p>
+      <p>这里以mTCP示例程序epserver为例，梳理mTCP的代码结构和mTCP应用的工作流程</p>
 <h2 id="mTCP-应用程序代码结构"><a href="#mTCP-应用程序代码结构" class="headerlink" title="mTCP 应用程序代码结构"></a>mTCP 应用程序代码结构</h2><p>如图，是mTCP epserver中的函数调用流程</p>
 <p><img src="/2018/07/17/mTCP代码阅读/mtcp-epserver-wu.png" alt=""></p>
 <h2 id="部分mTCP-API"><a href="#部分mTCP-API" class="headerlink" title="部分mTCP API"></a>部分mTCP API</h2><h5 id="int-mtcp-init-const-char-config-file"><a href="#int-mtcp-init-const-char-config-file" class="headerlink" title="int mtcp_init(const char *config_file)"></a>int mtcp_init(const char *config_file)</h5><p>只在application的main函数起来时初始化一次</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CreateAddressPool()</span><br><span class="line">SetRoutingTable()</span><br><span class="line">LoadARPTable()</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CreateAddressPool()</span><br><span class="line">SetRoutingTable()</span><br><span class="line">LoadARPTable()</span><br></pre></td></tr></table></figure>
 <h5 id="mctx-t-mtcp-create-context-int-cpu"><a href="#mctx-t-mtcp-create-context-int-cpu" class="headerlink" title="mctx_t mtcp_create_context(int cpu)"></a>mctx_t mtcp_create_context(int cpu)</h5><p>在每个核上都会被调用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">初始化本核协议栈的上下文，包括<span class="built_in">log</span>；</span><br><span class="line">MTCPRunThread(void *arg)对[struct mtcp_manager *mtcp]进行初始化;</span><br><span class="line">RunMainLoop(struct mtcp_thread_context *ctx)</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">初始化本核协议栈的上下文，包括<span class="built_in">log</span>；</span><br><span class="line">MTCPRunThread(void *arg)对[struct mtcp_manager *mtcp]进行初始化;</span><br><span class="line">RunMainLoop(struct mtcp_thread_context *ctx)</span><br></pre></td></tr></table></figure>
 <h3 id="socketAPI"><a href="#socketAPI" class="headerlink" title="socketAPI"></a>socketAPI</h3><h5 id="int-mtcp-socket-mctx-t-mctx-int-domain-int-type-int-protocol"><a href="#int-mtcp-socket-mctx-t-mctx-int-domain-int-type-int-protocol" class="headerlink" title="int mtcp_socket(mctx_t mctx, int domain, int type, int protocol)"></a>int mtcp_socket(mctx_t mctx, int domain, int type, int protocol)</h5><p>创建 socket</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">从每个核上的 mtcp_manager_t mtcp 的 free_smap 链表中取下一个 socket 并完成初始化；</span><br><span class="line">socket类型有6种：MTCP_SOCK_UNUSED, MTCP_SOCK_STREAM, MTCP_SOCK_PROXY, MTCP_SOCK_LISTENER, MTCP_SOCK_EPOLL,MTCP_SOCK_PIPE </span><br><span class="line">AllocateSocket(mctx, <span class="built_in">type</span>, FALSE)</span><br></pre></td></tr></table></figure>
-<h5 id="int-mtcp-listen-mctx-t-mctx-int-sockid-int-backlog"><a href="#int-mtcp-listen-mctx-t-mctx-int-sockid-int-backlog" class="headerlink" title="int mtcp_listen(mctx_t mctx, int sockid, int backlog)"></a>int mtcp_listen(mctx_t mctx, int sockid, int backlog)</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">把socket类型设置为MTCP_SOCK_LISTENER;</span><br><span class="line">ListenerHTInsert() </span><br><span class="line">创建struct tcp_listener对象，并初始化;</span><br><span class="line">创建accept queue</span><br><span class="line">把listener放入mtcp-&gt;listeners队列（说是hashtable结果是链表....）</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">从每个核上的 mtcp_manager_t mtcp 的 free_smap 链表中取下一个 socket 并完成初始化；</span><br><span class="line">socket类型有6种：MTCP_SOCK_UNUSED, MTCP_SOCK_STREAM, MTCP_SOCK_PROXY, MTCP_SOCK_LISTENER, MTCP_SOCK_EPOLL,MTCP_SOCK_PIPE </span><br><span class="line">AllocateSocket(mctx, <span class="built_in">type</span>, FALSE)</span><br></pre></td></tr></table></figure>
+<h5 id="int-mtcp-listen-mctx-t-mctx-int-sockid-int-backlog"><a href="#int-mtcp-listen-mctx-t-mctx-int-sockid-int-backlog" class="headerlink" title="int mtcp_listen(mctx_t mctx, int sockid, int backlog)"></a>int mtcp_listen(mctx_t mctx, int sockid, int backlog)</h5><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">把socket类型设置为MTCP_SOCK_LISTENER;</span><br><span class="line">ListenerHTInsert() </span><br><span class="line">创建struct tcp_listener对象，并初始化;</span><br><span class="line">创建accept queue</span><br><span class="line">把listener放入mtcp-&gt;listeners队列（说是hashtable结果是链表....）</span><br></pre></td></tr></table></figure>
 <h5 id="int-mtcp-accept-mctx-t-mctx-int-sockid-struct-sockaddr-addr-socklen-t-addrlen"><a href="#int-mtcp-accept-mctx-t-mctx-int-sockid-struct-sockaddr-addr-socklen-t-addrlen" class="headerlink" title="int mtcp_accept(mctx_t mctx, int sockid, struct sockaddr addr, socklen_t addrlen)"></a>int mtcp_accept(mctx_t mctx, int sockid, struct sockaddr <em>addr, socklen_t </em>addrlen)</h5><p>从socket的listener对象的accept queue里取连接请求</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果没有请求且socket-&gt;opt中没有nonblock选项则pthread_cond_wait()等待;</span><br><span class="line">创建一个类型为MTCP_SOCK_STREAM的socket并初始化；</span><br><span class="line">如果还有连接请求未处理且epoll为电平触发，则生成一个MTCP_EPOLLIN事件放入USR_SHADOW_EVENT_QUEUE</span><br></pre></td></tr></table></figure>
-<h5 id="ssize-t-mtcp-recv-mctx-t-mctx-int-sockid-char-buf-size-t-len-int-flags"><a href="#ssize-t-mtcp-recv-mctx-t-mctx-int-sockid-char-buf-size-t-len-int-flags" class="headerlink" title="ssize_t mtcp_recv(mctx_t mctx, int sockid, char *buf, size_t len, int flags)"></a>ssize_t mtcp_recv(mctx_t mctx, int sockid, char *buf, size_t len, int flags)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">检查stream状态机状态, 如果socket类型是MTCP_SOCK_PIPE，直接调用PipeRead()并返回</span><br><span class="line">CopyToUser(mtcp, cur_stream, buf, len)  <span class="comment">//将数据拷贝到用户缓冲区，并将stream加入ACK队列，这个过程需要上锁</span></span><br><span class="line">如果stream缓冲区还有未读数据且epoll为电平触发，产生一个MTCP_EPOLLIN事件放入USR_SHADOW_EVENT_QUEUE队列</span><br></pre></td></tr></table></figure>
-<h5 id="ssize-t-mtcp-write-mctx-t-mctx-int-sockid-const-char-buf-size-t-len"><a href="#ssize-t-mtcp-write-mctx-t-mctx-int-sockid-const-char-buf-size-t-len" class="headerlink" title="ssize_t mtcp_write(mctx_t mctx, int sockid, const char *buf, size_t len)"></a>ssize_t mtcp_write(mctx_t mctx, int sockid, const char *buf, size_t len)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">检查stream状态机状态;</span><br><span class="line">如果socket类型是MTCP_SOCK_PIPE，直接调用PipeWrite()并返回;</span><br><span class="line">CopyFromUser(mtcp, cur_stream, buf, len) <span class="comment">//将数据拷贝到stream缓冲区，此过程需要对write_lock上锁</span></span><br><span class="line">将stream放入发送队列，此过程需要上锁;</span><br><span class="line">如果发送窗口有剩余，且epoll为电平触发，生成MTCP_EPOLLOUT事件放入USR_SHADOW_EVENT_QUEUE</span><br></pre></td></tr></table></figure>
-<h3 id="协议栈触发API"><a href="#协议栈触发API" class="headerlink" title="协议栈触发API"></a>协议栈触发API</h3><h5 id="static-void-RunMainLoop-struct-mtcp-thread-context-ctx"><a href="#static-void-RunMainLoop-struct-mtcp-thread-context-ctx" class="headerlink" title="static void RunMainLoop(struct mtcp_thread_context *ctx)"></a>static void RunMainLoop(struct mtcp_thread_context *ctx)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">每个device从DPDK收包，并ProcessPacket()进行处理;</span><br><span class="line"><span class="comment">//检查各个定时器;</span></span><br><span class="line">CheckRtmTimeout(); </span><br><span class="line">CheckTimewaitExpire(); </span><br><span class="line">CheckConnectionTimeout();</span><br><span class="line">FlushEpollEvents(mtcp, ts)       <span class="comment">//处理epoll事件;</span></span><br><span class="line">HandleApplicationCalls(mtcp, ts) <span class="comment">//处理应用发来的流事件请求</span></span><br><span class="line">如果设置了ctx-&gt;interrupt，调用InterruptApplication(mtcp);</span><br></pre></td></tr></table></figure>
-<h5 id="int-ProcessTCPPacket-mtcp-manager-t-mtcp-uint32-t-cur-ts-const-int-ifidx-const-struct-iphdr-iph-int-ip-len"><a href="#int-ProcessTCPPacket-mtcp-manager-t-mtcp-uint32-t-cur-ts-const-int-ifidx-const-struct-iphdr-iph-int-ip-len" class="headerlink" title="int ProcessTCPPacket(mtcp_manager_t mtcp, uint32_t cur_ts, const int ifidx, const struct iphdr *iph, int ip_len)"></a>int ProcessTCPPacket(mtcp_manager_t mtcp, uint32_t cur_ts, const int ifidx, const struct iphdr *iph, int ip_len)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ValidateSequence(mtcp, cur_stream, cur_ts, tcph, seq, ack_seq, payloadlen) <span class="comment">//进行sequence处理</span></span><br><span class="line">一些异常情况需要加入处理队列，回复ACK;</span><br><span class="line">处理rst标志位;</span><br><span class="line">根据cur_stream-&gt;state和TCP状态机进行处理;</span><br></pre></td></tr></table></figure>
-<h5 id="static-inline-void-FlushEpollEvents-mtcp-manager-t-mtcp-uint32-t-cur-ts"><a href="#static-inline-void-FlushEpollEvents-mtcp-manager-t-mtcp-uint32-t-cur-ts" class="headerlink" title="static inline void FlushEpollEvents(mtcp_manager_t mtcp, uint32_t cur_ts)"></a>static inline void FlushEpollEvents(mtcp_manager_t mtcp, uint32_t cur_ts)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">此函数全程对该核上的ep-&gt;epoll_lock上锁</span><br><span class="line">如果ep-&gt;mtcp_queue有内容且ep-&gt;usr_queue有剩余空间，把mtcpq的事件拷贝到usrq中</span><br><span class="line">如果epoll处于waiting状态且usrq或shadowq中有事件，发出epoll_cond信号唤醒应用线程</span><br></pre></td></tr></table></figure>
-<h5 id="static-inline-void-HandleApplicationCalls-mtcp-manager-t-mtcp-uint32-t-cur-ts"><a href="#static-inline-void-HandleApplicationCalls-mtcp-manager-t-mtcp-uint32-t-cur-ts" class="headerlink" title="static inline void HandleApplicationCalls(mtcp_manager_t mtcp, uint32_t cur_ts)"></a>static inline void HandleApplicationCalls(mtcp_manager_t mtcp, uint32_t cur_ts)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">把mtcp-&gt;connectq上所有stream取下来并AddtoControlList(mtcp, stream, cur_ts)，这些流在WriteTCPControlList()中被处理，发送control packet</span><br><span class="line">把mtcp-&gt;sendq上所有stream取下来并AddtoSendList(mtcp, stream)，这些流在WriteTCPDataList()中被处理</span><br><span class="line">把mtcp-&gt;ackq上所有stream取下来并EnqueueACK(mtcp, stream, cur_ts, ACK_OPT_AGGREGATE)，这些流在WriteTCPACKList()中被处理</span><br><span class="line">处理mtcp-&gt;closeq上的stream</span><br><span class="line">处理mtcp-&gt;resetq上的stream</span><br><span class="line">处理mtcp-&gt;destroyq上的stream</span><br></pre></td></tr></table></figure>
-<h5 id="static-inline-void-WritePacketsToChunks-mtcp-manager-t-mtcp-uint32-t-cur-ts"><a href="#static-inline-void-WritePacketsToChunks-mtcp-manager-t-mtcp-uint32-t-cur-ts" class="headerlink" title="static inline void WritePacketsToChunks(mtcp_manager_t mtcp, uint32_t cur_ts)"></a>static inline void WritePacketsToChunks(mtcp_manager_t mtcp, uint32_t cur_ts)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对g_sender和所有n_sender</span></span><br><span class="line">WriteTCPControlList();</span><br><span class="line">WriteTCPACKList();</span><br><span class="line">WriteTCPDataList();</span><br></pre></td></tr></table></figure>
-<h5 id="static-void-InterruptApplication-mtcp-manager-t-mtcp"><a href="#static-void-InterruptApplication-mtcp-manager-t-mtcp" class="headerlink" title="static void InterruptApplication(mtcp_manager_t mtcp)"></a>static void InterruptApplication(mtcp_manager_t mtcp)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果epoll处于waiting状态，发送mtcp-&gt;ep-&gt;epoll_cond信号</span><br><span class="line">检查每个端口的listener，发送pthread_cond_signal(&amp;listener-&gt;accept_cond)信号</span><br></pre></td></tr></table></figure>
-<h3 id="epoll-API"><a href="#epoll-API" class="headerlink" title="epoll API"></a>epoll API</h3><h5 id="int-mtcp-epoll-create-mctx-t-mctx-int-size"><a href="#int-mtcp-epoll-create-mctx-t-mctx-int-size" class="headerlink" title="int mtcp_epoll_create(mctx_t mctx, int size)"></a>int mtcp_epoll_create(mctx_t mctx, int size)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在每个核的线程初始化的时候进行调用</span></span><br></pre></td></tr></table></figure>
-<h5 id="mtcp-epoll-ctl"><a href="#mtcp-epoll-ctl" class="headerlink" title="mtcp_epoll_ctl()"></a>mtcp_epoll_ctl()</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用于对MTCP_EPOLL_CTL_ADD，MTCP_EPOLL_CTL_MOD, MTCP_EPOLL_CTL_DEL三种epoll事件操作的处理</span></span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果没有请求且socket-&gt;opt中没有nonblock选项则pthread_cond_wait()等待;</span><br><span class="line">创建一个类型为MTCP_SOCK_STREAM的socket并初始化；</span><br><span class="line">如果还有连接请求未处理且epoll为电平触发，则生成一个MTCP_EPOLLIN事件放入USR_SHADOW_EVENT_QUEUE</span><br></pre></td></tr></table></figure>
+<h5 id="ssize-t-mtcp-recv-mctx-t-mctx-int-sockid-char-buf-size-t-len-int-flags"><a href="#ssize-t-mtcp-recv-mctx-t-mctx-int-sockid-char-buf-size-t-len-int-flags" class="headerlink" title="ssize_t mtcp_recv(mctx_t mctx, int sockid, char *buf, size_t len, int flags)"></a>ssize_t mtcp_recv(mctx_t mctx, int sockid, char *buf, size_t len, int flags)</h5><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">检查stream状态机状态, 如果socket类型是MTCP_SOCK_PIPE，直接调用PipeRead()并返回</span><br><span class="line">CopyToUser(mtcp, cur_stream, buf, len)  <span class="comment">//将数据拷贝到用户缓冲区，并将stream加入ACK队列，这个过程需要上锁</span></span><br><span class="line">如果stream缓冲区还有未读数据且epoll为电平触发，产生一个MTCP_EPOLLIN事件放入USR_SHADOW_EVENT_QUEUE队列</span><br></pre></td></tr></table></figure>
+<h5 id="ssize-t-mtcp-write-mctx-t-mctx-int-sockid-const-char-buf-size-t-len"><a href="#ssize-t-mtcp-write-mctx-t-mctx-int-sockid-const-char-buf-size-t-len" class="headerlink" title="ssize_t mtcp_write(mctx_t mctx, int sockid, const char *buf, size_t len)"></a>ssize_t mtcp_write(mctx_t mctx, int sockid, const char *buf, size_t len)</h5><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">检查stream状态机状态;</span><br><span class="line">如果socket类型是MTCP_SOCK_PIPE，直接调用PipeWrite()并返回;</span><br><span class="line">CopyFromUser(mtcp, cur_stream, buf, len) <span class="comment">//将数据拷贝到stream缓冲区，此过程需要对write_lock上锁</span></span><br><span class="line">将stream放入发送队列，此过程需要上锁;</span><br><span class="line">如果发送窗口有剩余，且epoll为电平触发，生成MTCP_EPOLLOUT事件放入USR_SHADOW_EVENT_QUEUE</span><br></pre></td></tr></table></figure>
+<h3 id="协议栈触发API"><a href="#协议栈触发API" class="headerlink" title="协议栈触发API"></a>协议栈触发API</h3><h5 id="static-void-RunMainLoop-struct-mtcp-thread-context-ctx"><a href="#static-void-RunMainLoop-struct-mtcp-thread-context-ctx" class="headerlink" title="static void RunMainLoop(struct mtcp_thread_context *ctx)"></a>static void RunMainLoop(struct mtcp_thread_context *ctx)</h5><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">每个device从DPDK收包，并ProcessPacket()进行处理;</span><br><span class="line"><span class="comment">//检查各个定时器;</span></span><br><span class="line">CheckRtmTimeout(); </span><br><span class="line">CheckTimewaitExpire(); </span><br><span class="line">CheckConnectionTimeout();</span><br><span class="line">FlushEpollEvents(mtcp, ts)       <span class="comment">//处理epoll事件;</span></span><br><span class="line">HandleApplicationCalls(mtcp, ts) <span class="comment">//处理应用发来的流事件请求</span></span><br><span class="line">如果设置了ctx-&gt;interrupt，调用InterruptApplication(mtcp);</span><br></pre></td></tr></table></figure>
+<h5 id="int-ProcessTCPPacket-mtcp-manager-t-mtcp-uint32-t-cur-ts-const-int-ifidx-const-struct-iphdr-iph-int-ip-len"><a href="#int-ProcessTCPPacket-mtcp-manager-t-mtcp-uint32-t-cur-ts-const-int-ifidx-const-struct-iphdr-iph-int-ip-len" class="headerlink" title="int ProcessTCPPacket(mtcp_manager_t mtcp, uint32_t cur_ts, const int ifidx, const struct iphdr *iph, int ip_len)"></a>int ProcessTCPPacket(mtcp_manager_t mtcp, uint32_t cur_ts, const int ifidx, const struct iphdr *iph, int ip_len)</h5><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ValidateSequence(mtcp, cur_stream, cur_ts, tcph, seq, ack_seq, payloadlen) <span class="comment">//进行sequence处理</span></span><br><span class="line">一些异常情况需要加入处理队列，回复ACK;</span><br><span class="line">处理rst标志位;</span><br><span class="line">根据cur_stream-&gt;state和TCP状态机进行处理;</span><br></pre></td></tr></table></figure>
+<h5 id="static-inline-void-FlushEpollEvents-mtcp-manager-t-mtcp-uint32-t-cur-ts"><a href="#static-inline-void-FlushEpollEvents-mtcp-manager-t-mtcp-uint32-t-cur-ts" class="headerlink" title="static inline void FlushEpollEvents(mtcp_manager_t mtcp, uint32_t cur_ts)"></a>static inline void FlushEpollEvents(mtcp_manager_t mtcp, uint32_t cur_ts)</h5><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">此函数全程对该核上的ep-&gt;epoll_lock上锁</span><br><span class="line">如果ep-&gt;mtcp_queue有内容且ep-&gt;usr_queue有剩余空间，把mtcpq的事件拷贝到usrq中</span><br><span class="line">如果epoll处于waiting状态且usrq或shadowq中有事件，发出epoll_cond信号唤醒应用线程</span><br></pre></td></tr></table></figure>
+<h5 id="static-inline-void-HandleApplicationCalls-mtcp-manager-t-mtcp-uint32-t-cur-ts"><a href="#static-inline-void-HandleApplicationCalls-mtcp-manager-t-mtcp-uint32-t-cur-ts" class="headerlink" title="static inline void HandleApplicationCalls(mtcp_manager_t mtcp, uint32_t cur_ts)"></a>static inline void HandleApplicationCalls(mtcp_manager_t mtcp, uint32_t cur_ts)</h5><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">把mtcp-&gt;connectq上所有stream取下来并AddtoControlList(mtcp, stream, cur_ts)，这些流在WriteTCPControlList()中被处理，发送control packet</span><br><span class="line">把mtcp-&gt;sendq上所有stream取下来并AddtoSendList(mtcp, stream)，这些流在WriteTCPDataList()中被处理</span><br><span class="line">把mtcp-&gt;ackq上所有stream取下来并EnqueueACK(mtcp, stream, cur_ts, ACK_OPT_AGGREGATE)，这些流在WriteTCPACKList()中被处理</span><br><span class="line">处理mtcp-&gt;closeq上的stream</span><br><span class="line">处理mtcp-&gt;resetq上的stream</span><br><span class="line">处理mtcp-&gt;destroyq上的stream</span><br></pre></td></tr></table></figure>
+<h5 id="static-inline-void-WritePacketsToChunks-mtcp-manager-t-mtcp-uint32-t-cur-ts"><a href="#static-inline-void-WritePacketsToChunks-mtcp-manager-t-mtcp-uint32-t-cur-ts" class="headerlink" title="static inline void WritePacketsToChunks(mtcp_manager_t mtcp, uint32_t cur_ts)"></a>static inline void WritePacketsToChunks(mtcp_manager_t mtcp, uint32_t cur_ts)</h5><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对g_sender和所有n_sender</span></span><br><span class="line">WriteTCPControlList();</span><br><span class="line">WriteTCPACKList();</span><br><span class="line">WriteTCPDataList();</span><br></pre></td></tr></table></figure>
+<h5 id="static-void-InterruptApplication-mtcp-manager-t-mtcp"><a href="#static-void-InterruptApplication-mtcp-manager-t-mtcp" class="headerlink" title="static void InterruptApplication(mtcp_manager_t mtcp)"></a>static void InterruptApplication(mtcp_manager_t mtcp)</h5><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果epoll处于waiting状态，发送mtcp-&gt;ep-&gt;epoll_cond信号</span><br><span class="line">检查每个端口的listener，发送pthread_cond_signal(&amp;listener-&gt;accept_cond)信号</span><br></pre></td></tr></table></figure>
+<h3 id="epoll-API"><a href="#epoll-API" class="headerlink" title="epoll API"></a>epoll API</h3><h5 id="int-mtcp-epoll-create-mctx-t-mctx-int-size"><a href="#int-mtcp-epoll-create-mctx-t-mctx-int-size" class="headerlink" title="int mtcp_epoll_create(mctx_t mctx, int size)"></a>int mtcp_epoll_create(mctx_t mctx, int size)</h5><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在每个核的线程初始化的时候进行调用</span></span><br></pre></td></tr></table></figure>
+<h5 id="mtcp-epoll-ctl"><a href="#mtcp-epoll-ctl" class="headerlink" title="mtcp_epoll_ctl()"></a>mtcp_epoll_ctl()</h5><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用于对MTCP_EPOLL_CTL_ADD，MTCP_EPOLL_CTL_MOD, MTCP_EPOLL_CTL_DEL三种epoll事件操作的处理</span></span><br></pre></td></tr></table></figure>
 
       
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/07/17/mTCP代码阅读/" data-id="cjjqrwvpw0002kqsbdrtxepep" class="article-share-link" data-share="baidu" data-title="mTCP代码阅读">Share</a>
-      
-
-      
-        <a href="http://yoursite.com/2018/07/17/mTCP代码阅读/#ds-thread" class="article-comment-link">Comments</a>
-      
-
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-hexo introduction" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/17/hexo introduction/" class="article-date">
-  <time datetime="2018-07-17T11:17:46.274Z" itemprop="datePublished">2018-07-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/hexo introduction/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Victor">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="Victor's Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/07/17/hexo introduction/" itemprop="url">hexo使用简介</a>
+      </h1>
+      <div class="post-meta">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/hexo introduction/">hexo使用简介</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-17T19:17:46+08:00">2018-07-17 19:17:46</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
-        <h2 id="本地文件介绍"><a href="#本地文件介绍" class="headerlink" title="本地文件介绍"></a>本地文件介绍</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_config.yml	存放hexo博客的个人描述, 博客小图标地址, 头像地址等等.</span><br><span class="line"><span class="built_in">source</span> 		文件夹下的_posts 存放你所有的博文.md文件 你可以通过 hexo n <span class="string">"xxx"</span> 创建博客文章, 也可以直接把xxx.md 格式的文件直接拖入进去</span><br><span class="line">themes  	存放你的所有主题文件</span><br></pre></td></tr></table></figure>
-<h2 id="常用命令介绍"><a href="#常用命令介绍" class="headerlink" title="常用命令介绍"></a>常用命令介绍</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean 	清理缓存, 一般是在配置不能生效, 或者文章发布了不显示, 等等异常情况下使用的. 当然有时候清除浏览器缓存也是必须的操作.</span><br><span class="line">hexo g 		重新生成静态网页, 所有发布文章, 修改文章, 修改hexo配置, 修改主题配置等等操作, 都需要.</span><br><span class="line">hexo d 		让你的静态网页从本地部署到github</span><br><span class="line">hexo s 		你可以边写文章, 边使用这个命令在本地预览, 包括修改各种配置, 都可以预览.</span><br></pre></td></tr></table></figure>
+      <h2 id="本地文件介绍"><a href="#本地文件介绍" class="headerlink" title="本地文件介绍"></a>本地文件介绍</h2><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_config.yml	存放hexo博客的个人描述, 博客小图标地址, 头像地址等等.</span><br><span class="line"><span class="built_in">source</span> 		文件夹下的_posts 存放你所有的博文.md文件 你可以通过 hexo n <span class="string">"xxx"</span> 创建博客文章, 也可以直接把xxx.md 格式的文件直接拖入进去</span><br><span class="line">themes  	存放你的所有主题文件</span><br></pre></td></tr></table></figure>
+<h2 id="常用命令介绍"><a href="#常用命令介绍" class="headerlink" title="常用命令介绍"></a>常用命令介绍</h2><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean 	清理缓存, 一般是在配置不能生效, 或者文章发布了不显示, 等等异常情况下使用的. 当然有时候清除浏览器缓存也是必须的操作.</span><br><span class="line">hexo g 		重新生成静态网页, 所有发布文章, 修改文章, 修改hexo配置, 修改主题配置等等操作, 都需要.</span><br><span class="line">hexo d 		让你的静态网页从本地部署到github</span><br><span class="line">hexo s 		你可以边写文章, 边使用这个命令在本地预览, 包括修改各种配置, 都可以预览.</span><br></pre></td></tr></table></figure>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
 <li><p>所有hexo xxx的操作, 必须用终端cd 你本地环境目录下, 然后才能用hexo xxx操作.</p>
 </li>
@@ -166,224 +217,179 @@
 </ol>
 
       
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/07/17/hexo introduction/" data-id="cjjqrwvpu0001kqsbrm8ozo2l" class="article-share-link" data-share="baidu" data-title="hexo使用简介">Share</a>
-      
-
-      
-        <a href="http://yoursite.com/2018/07/17/hexo introduction/#ds-thread" class="article-comment-link">Comments</a>
-      
-
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/17/hello-world/" class="article-date">
-  <time datetime="2018-07-17T10:34:09.787Z" itemprop="datePublished">2018-07-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+  <article class="index-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/hello-world/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Victor">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="Victor's Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/07/17/hello-world/" itemprop="url">Hello World</a>
+      </h1>
+      <div class="post-meta">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-17T18:34:09+08:00">2018-07-17 18:34:09</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/07/17/hello-world/" data-id="cjjqrwvpr0000kqsbb1egyhnn" class="article-share-link" data-share="baidu" data-title="Hello World">Share</a>
-      
-
-      
-        <a href="http://yoursite.com/2018/07/17/hello-world/#ds-thread" class="article-comment-link">Comments</a>
-      
-
+    </main>
+    <footer class="post-footer">
       
     </footer>
-  </div>
+  </article>
   
-</article>
+  
+  
+</div>
 
-
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
   
-
-</section>
-      
-      <aside id="sidebar">
-  
-    
-  
-    
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">3</span></li></ul>
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
-
+  <div class="search-result-box" id="search-result"></div>
   
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.png" alt="Victor">
+  
+  <h1 class="author-name">Victor</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/07/17/hexo introduction/">hexo使用简介</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/17/mTCP代码阅读/">mTCP代码阅读</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/17/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">3</a></div>
     </div>
-  </div>
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Links</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="https://github.com/WenqingWu" target="_blank">Github of Mine</a>
-          </li>
-        
-          <li>
-            <a href="https://github.com/eunyoung14/mtcp" target="_blank">mTCP</a>
-          </li>
-        
-          <li>
-            <a href="http://reqianduan.com" target="_blank">热前端</a>
-          </li>
-        
-          <li>
-            <a href="http://yuancheng.work" target="_blank">远程.work</a>
-          </li>
-        
-      </ul>
-    </div>
+    
+    
   </div>
-
   
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:youremail@youremailhost" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+    
+    <li><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+    
+    <li><a href="https://mozilla.github.io/nunjucks/" target="_blank">Nunjucks</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
 </aside>
-      
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
     </div>
-    <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 Victor<br>
-      Powered by <a href="//hexo.io/" target="_blank">Victor's Blog</a>
-      .
-      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">Victor</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+        
+<div class="busuanzi">
+  <span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv"></span></span>
+</div>
+
+
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
-  </div>
-  <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-  <!-- totop start -->
-<div id="totop">
-<a title="totop"><img src="/img/scrollup.png"/></a>
-</div>
-
-<!-- totop end -->
-
-<!-- 多说公共js代码 start -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"reqianduan"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0]
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-<!-- 多说公共js代码 end -->
 
 
-<!-- 百度分享 start -->
-
-<div id="article-share-box" class="article-share-box">
-  <div id="bdshare" class="bdsharebuttonbox article-share-links">
-    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
-    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
-    <a class="article-share-more" data-cmd="more" title="更多"></a>
-  </div>
-</div>
-<script>
-  function SetShareData(cmd, config) {
-    if (shareDataTitle && shareDataUrl) {
-      config.bdText = shareDataTitle;
-      config.bdUrl = shareDataUrl;
-    }
-    return config;
-  }
-  window._bd_share_config={
-    "common":{onBeforeClick: SetShareData},
-    "share":{"bdCustomStyle":"/css/bdshare.css"}
-  };
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-
-<!-- 百度分享 end -->
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-</div>
-</body>
+  </body>
 </html>
