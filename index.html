@@ -1,445 +1,468 @@
 <!DOCTYPE html>
-<html lang="zh_CN">
-  <head>
-    
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<html lang="en">
 
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Victor&#39;s Blog" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        
+        
+    </title>
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="canonical" href="https://yoursite.com/">
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
 
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
 
+<style>
 
-
-
-  <meta name="keywords" content="Linux Network C Python DataCenter" />
-
-
-
-
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Victor's Blog">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.9.0" />
-
-
-
-<link rel="canonical" href="https://yoursite.com/"/>
-
-
-
-  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
-
-
-
-
-  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.9.0" />
-
-
-
-  
-
-
-
-  <script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    header.intro-header {
+        background-image: url('')
     }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
+" data-ishome = "true" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Victor&#39;s Blog
+                </span>
+                's Blog
+            </a>
+        </div>
 
-
-
-
-
-
-
-
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
 <script>
-  window.config = {"title":"Victor's Blog","subtitle":"动者静之基，清者浊之源","description":null,"author":"Victor","language":"zh_CN","timezone":"Asia/Shanghai","url":"https://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":true,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"https://github.com/WenqingWu/WenqingWu.github.io.git","branch":"master"},"ignore":[],"keywords":"Linux Network C Python DataCenter","email":"wuwenqing@ict.ac.cn","index_generator":{"per_page":10,"order_by":"-date","path":""},"Plugins":["hexo-generator-baidu-sitemap","hexo-generator-sitemap"],"baidusitemap":{"path":"baidusitemap.xml"},"sitemap":{"path":"sitemap.xml"},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"search":{"path":"search.xml","field":"post","format":"html","limit":"10000"},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories"},"color":"Default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"wuwenqing@ict.ac.cn","stack-overflow":null,"twitter":null,"facebook":null,"github":"https://github.com/WenqingWu","weibo":null,"zhihu":"https://www.zhihu.com"},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.9.0"};
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
 </script>
 
-    <title> Victor's Blog </title>
-  </head>
+<!-- Main Content -->
 
-  <a href="https://github.com/WenqingWu/WenqingWu.github.io" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
-  <body><div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/." class="logo">Victor's Blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<style>
+
+    .custom-haojen-container .post-preview:nth-of-type(1),
+    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
+        text-align: center;
+        background-repeat: no-repeat;
+        border-radius: 3px;
+        background-size: cover;
+        padding: 0;
+        height: 300px;
+        display: table;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.16);
+    }
+
+    /*去掉诗歌的背景图片*/
+    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
+        background-image: none !important;
+        background-color: rgba(255, 248, 220, 0.5);
+    }
+
+    .custom-haojen-container .post-preview:nth-child(1) h2,
+    .custom-haojen-container .post-preview:nth-child(1) .post-meta,
+    .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
+        text-shadow: 0 0 40px rgba(0, 0, 0, 1);
+        letter-spacing: 1px;
+        color: #fff;
+        margin-top: 0;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .custom-haojen-container .post-preview:nth-child(1) .post-meta {
+        font-size: .9em;
+        font-weight: 300;
+        margin-top: 0;
+    }
+
+    .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle {
+        letter-spacing: 6px;
+        font-size: 18px;
+        font-family: unset;
+        font-weight: 400;
+        color: rgba(0, 0, 0, .75)
+    }
+
+    /*不显示摘要*/
+    .custom-haojen-container .post-preview:nth-child(1) .post-content-preview {
+        display: none
+    }
+
+    /*只第一个显示背景图片*/
+    .custom-haojen-container .post-preview:not(:nth-child(1)) {
+        background-image: none !important;
+    }
+
+    /*第一个分界线去掉*/
+    .custom-haojen-container hr:nth-of-type(1) {
+        display: none;
+    }
+
+    /*主题*/
+    .custom-haojen-container .post-preview:nth-of-type(1) > a {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    /*诗词标题*/
+    .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
+        font-size: 35px;
+        font-family: STKaiti;
+        color: rgba(0, 0, 0, .8);
+    }
+
+    .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-meta {
+        color: #0e2231;
+    }
+
+    @media (max-width: 768px) {
+        .custom-haojen-container .post-preview:nth-child(1) {
+            height: 240px;
+        }
+
+        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
+            font-size: 28px !important;
+            margin-top: 0;
+        }
+
+        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .custom-haojen-container .post-preview:nth-of-type(1) > a {
+            padding: 20px
+        }
+    }
+
+    /*手机屏幕*/
+    @media (max-width: 400px) {
+        .custom-haojen-container .post-preview:nth-child(1) {
+            height: 195px;
+        }
+
+        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
+            font-size: 20px !important;
+        }
+
+        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
+            font-size: 16px;
+        }
+
+        .custom-haojen-container .post-preview:nth-child(1) a {
+            padding: 30px 20px;
+        }
+    }
+</style>
+
+<!-- Page Header -->
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
+    <div class="row">
+        <header class="intro-header">
+            <div class="container">
+                <div class="site-heading text-center">
+                    <div class="about-me">
+                        <!--移动端头部显示-->
+                        <img src=""/>
+                        <h5><a href="/about/">Victor</a></h5>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</div>
+<!-- Main Content -->
+<div class="container custom-haojen-container">
+    <!-- Post Container -->
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+            <!-- Main Content -->
+
+
+
+<div class="post-preview "
+     style="background-image: url('')">
+    <a href="/2018/07/18/mTCP-Code-Reading/">
+        <h2 class="post-title">
+            mTCP Code Reading
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-07-18
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                一直以来，网络协议栈都和内核密切相关，内核作为操作系统的控制者，也是负责网络资源分配的最佳人选。随着Linux系统的不断壮大，内核协议栈的功能性能和稳定性都得到了高度认可。
+现在互联网业务蒸蒸日上，本该是性能瓶颈的网络传输，被聪明的开发者们通过集群、分布式等方式不断优化，将网络业务的力量不断提高..
+            </p>
+        </div>
+    </a>
+
 </div>
 
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/archives/">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            分类
-          
-        </li>
-      </a>
-    
-  </ul>
-</nav>
+<hr>
 
-    <div class="container" id="mobile-panel">
 
-      <header id="header" class="header"><div class="logo-wrapper">
-  <a href="/." class="logo">Victor's Blog</a>
+
+<div class="post-preview "
+     style="background-image: url('')">
+    <a href="/2018/07/17/hexo introduction/">
+        <h2 class="post-title">
+            hexo使用简介
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-07-17
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                Hexo(中文官方网站)是一个快速、简洁且高效的博客框架，让上百个页面在几秒内瞬间完成渲染。类似于jekyll、Octopress、WordPress，我们可以用hexo创建自己的博客，托管到GitHub上，绑定自己的域名，用MarkDown写文章。Hexo支持Github Flavored M..
+            </p>
+        </div>
+    </a>
+
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/">
-            
-            
-              首页
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/archives/">
-            
-            
-              归档
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            
-            
-              标签
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            
-            
-              分类
-            
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
+<hr>
 
-      </header>
 
-      <main id="main" class="main">
-        <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts">
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/07/18/mTCP-Code-Reading/">mTCP Code Reading</a>
-        
-      </h1>
 
-      <div class="post-meta">
-        <span class="post-time">
-          2018-07-18
-        </span>
-        
-        
-      </div>
-    </header>
 
+<!-- 翻页 pager -->
+
+<ul class="pager">
     
     
+</ul>
 
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>一直以来，网络协议栈都和内核密切相关，内核作为操作系统的控制者，也是负责网络资源分配的最佳人选。随着Linux系统的不断壮大，内核协议栈的功能性能和稳定性都得到了高度认可。</p>
-<p>现在互联网业务蒸蒸日上，本该是性能瓶颈的网络传输，被聪明的开发者们通过集群、分布式等方式不断优化，将网络业务的力量不断提高。但随之而来，Linux内核作为一个调度者，不适宜对外提供业务服务，也不适合占用系统资源，无论多么巧妙的开发技巧，都存在面对单点性能瓶颈的问题。</p>
-<p>而用户态协议栈，可以让Linux内核更专注系统的控制调度；将复杂的协议处理放到用户态，使用更多的系统资源，提供给开发者更自由的环境，做更多更酷的的事。</p>
-<p>自己之前做过mTCP在x86和ARM（需要对mTCP的IO部分做一些修改才能在ARM下编译运行）下的测试工作，主要是测试吞吐和尾延迟，去年还做过一段时间将Web应用向mTCP移植的工作。总之，对mTCP的基本工作有一定的了解，但是没有深度调研mTCP的工作流程。近期由于工作需要，准备阅读mTCP的源码，梳理其代码结构和mTCP应用的工作流程。</p>
-<p>这里以mTCP示例程序epserver为例简要分析，如图所示</p>
-<h2 id="mTCP-应用程序代码结构"><a href="#mTCP-应用程序代码结构" class="headerlink" title="mTCP 应用程序代码结构"></a>mTCP 应用程序代码结构</h2><p>如图，是mTCP epserver中的函数调用流程</p>
-<p><img src="/2018/07/18/mTCP-Code-Reading/mtcp-epserver-wu.png" alt=""></p>
-<h2 id="部分mTCP-API"><a href="#部分mTCP-API" class="headerlink" title="部分mTCP API"></a>部分mTCP API</h2><h5 id="int-mtcp-init-const-char-config-file"><a href="#int-mtcp-init-const-char-config-file" class="headerlink" title="int mtcp_init(const char *config_file)"></a>int mtcp_init(const char *config_file)</h5><p>只在application的main函数起来时初始化一次</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CreateAddressPool()</span><br><span class="line">SetRoutingTable()</span><br><span class="line">LoadARPTable()</span><br></pre></td></tr></table></figure>
-<h5 id="mctx-t-mtcp-create-context-int-cpu"><a href="#mctx-t-mtcp-create-context-int-cpu" class="headerlink" title="mctx_t mtcp_create_context(int cpu)"></a>mctx_t mtcp_create_context(int cpu)</h5><p>在每个核上都会被调用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">初始化本核协议栈的上下文，包括<span class="built_in">log</span>；</span><br><span class="line">MTCPRunThread(void *arg)对[struct mtcp_manager *mtcp]进行初始化;</span><br><span class="line">RunMainLoop(struct mtcp_thread_context *ctx)</span><br></pre></td></tr></table></figure>
-<h3 id="socketAPI"><a href="#socketAPI" class="headerlink" title="socketAPI"></a>socketAPI</h3><h5 id="int-mtcp-socket-mctx-t-mctx-int-domain-int-type-int-protocol"><a href="#int-mtcp-socket-mctx-t-mctx-int-domain-int-type-int-protocol" class="headerlink" title="int mtcp_socket(mctx_t mctx, int domain, int type, int protocol)"></a>int mtcp_socket(mctx_t mctx, int domain, int type, int protocol)</h5><p>创建 socket</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">从每个核上的 mtcp_manager_t mtcp 的 free_smap 链表中取下一个 socket 并完成初始化；</span><br><span class="line">socket类型有6种：MTCP_SOCK_UNUSED, MTCP_SOCK_STREAM, MTCP_SOCK_PROXY, MTCP_SOCK_LISTENER, MTCP_SOCK_EPOLL,MTCP_SOCK_PIPE </span><br><span class="line">AllocateSocket(mctx, <span class="built_in">type</span>, FALSE)</span><br></pre></td></tr></table></figure>
-<h5 id="int-mtcp-listen-mctx-t-mctx-int-sockid-int-backlog"><a href="#int-mtcp-listen-mctx-t-mctx-int-sockid-int-backlog" class="headerlink" title="int mtcp_listen(mctx_t mctx, int sockid, int backlog)"></a>int mtcp_listen(mctx_t mctx, int sockid, int backlog)</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">把socket类型设置为MTCP_SOCK_LISTENER;</span><br><span class="line">ListenerHTInsert() </span><br><span class="line">创建struct tcp_listener对象，并初始化;</span><br><span class="line">创建accept queue</span><br><span class="line">把listener放入mtcp-&gt;listeners队列（说是hashtable结果是链表....）</span><br></pre></td></tr></table></figure>
-<h5 id="int-mtcp-accept-mctx-t-mctx-int-sockid-struct-sockaddr-addr-socklen-t-addrlen"><a href="#int-mtcp-accept-mctx-t-mctx-int-sockid-struct-sockaddr-addr-socklen-t-addrlen" class="headerlink" title="int mtcp_accept(mctx_t mctx, int sockid, struct sockaddr addr, socklen_t addrlen)"></a>int mtcp_accept(mctx_t mctx, int sockid, struct sockaddr <em>addr, socklen_t </em>addrlen)</h5><p>从socket的listener对象的accept queue里取连接请求</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果没有请求且socket-&gt;opt中没有nonblock选项则pthread_cond_wait()等待;</span><br><span class="line">创建一个类型为MTCP_SOCK_STREAM的socket并初始化；</span><br><span class="line">如果还有连接请求未处理且epoll为电平触发，则生成一个MTCP_EPOLLIN事件放入USR_SHADOW_EVENT_QUEUE</span><br></pre></td></tr></table></figure>
-<h5 id="ssize-t-mtcp-recv-mctx-t-mctx-int-sockid-char-buf-size-t-len-int-flags"><a href="#ssize-t-mtcp-recv-mctx-t-mctx-int-sockid-char-buf-size-t-len-int-flags" class="headerlink" title="ssize_t mtcp_recv(mctx_t mctx, int sockid, char *buf, size_t len, int flags)"></a>ssize_t mtcp_recv(mctx_t mctx, int sockid, char *buf, size_t len, int flags)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">检查stream状态机状态, 如果socket类型是MTCP_SOCK_PIPE，直接调用PipeRead()并返回</span><br><span class="line">CopyToUser(mtcp, cur_stream, buf, len)  <span class="comment">//将数据拷贝到用户缓冲区，并将stream加入ACK队列，这个过程需要上锁</span></span><br><span class="line">如果stream缓冲区还有未读数据且epoll为电平触发，产生一个MTCP_EPOLLIN事件放入USR_SHADOW_EVENT_QUEUE队列</span><br></pre></td></tr></table></figure>
-<h5 id="ssize-t-mtcp-write-mctx-t-mctx-int-sockid-const-char-buf-size-t-len"><a href="#ssize-t-mtcp-write-mctx-t-mctx-int-sockid-const-char-buf-size-t-len" class="headerlink" title="ssize_t mtcp_write(mctx_t mctx, int sockid, const char *buf, size_t len)"></a>ssize_t mtcp_write(mctx_t mctx, int sockid, const char *buf, size_t len)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">检查stream状态机状态;</span><br><span class="line">如果socket类型是MTCP_SOCK_PIPE，直接调用PipeWrite()并返回;</span><br><span class="line">CopyFromUser(mtcp, cur_stream, buf, len) <span class="comment">//将数据拷贝到stream缓冲区，此过程需要对write_lock上锁</span></span><br><span class="line">将stream放入发送队列，此过程需要上锁;</span><br><span class="line">如果发送窗口有剩余，且epoll为电平触发，生成MTCP_EPOLLOUT事件放入USR_SHADOW_EVENT_QUEUE</span><br></pre></td></tr></table></figure>
-<h3 id="协议栈触发API"><a href="#协议栈触发API" class="headerlink" title="协议栈触发API"></a>协议栈触发API</h3><h5 id="static-void-RunMainLoop-struct-mtcp-thread-context-ctx"><a href="#static-void-RunMainLoop-struct-mtcp-thread-context-ctx" class="headerlink" title="static void RunMainLoop(struct mtcp_thread_context *ctx)"></a>static void RunMainLoop(struct mtcp_thread_context *ctx)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">每个device从DPDK收包，并ProcessPacket()进行处理;</span><br><span class="line"><span class="comment">//检查各个定时器;</span></span><br><span class="line">CheckRtmTimeout(); </span><br><span class="line">CheckTimewaitExpire(); </span><br><span class="line">CheckConnectionTimeout();</span><br><span class="line">FlushEpollEvents(mtcp, ts)       <span class="comment">//处理epoll事件;</span></span><br><span class="line">HandleApplicationCalls(mtcp, ts) <span class="comment">//处理应用发来的流事件请求</span></span><br><span class="line">如果设置了ctx-&gt;interrupt，调用InterruptApplication(mtcp);</span><br></pre></td></tr></table></figure>
-<h5 id="int-ProcessTCPPacket-mtcp-manager-t-mtcp-uint32-t-cur-ts-const-int-ifidx-const-struct-iphdr-iph-int-ip-len"><a href="#int-ProcessTCPPacket-mtcp-manager-t-mtcp-uint32-t-cur-ts-const-int-ifidx-const-struct-iphdr-iph-int-ip-len" class="headerlink" title="int ProcessTCPPacket(mtcp_manager_t mtcp, uint32_t cur_ts, const int ifidx, const struct iphdr *iph, int ip_len)"></a>int ProcessTCPPacket(mtcp_manager_t mtcp, uint32_t cur_ts, const int ifidx, const struct iphdr *iph, int ip_len)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ValidateSequence(mtcp, cur_stream, cur_ts, tcph, seq, ack_seq, payloadlen) <span class="comment">//进行sequence处理</span></span><br><span class="line">一些异常情况需要加入处理队列，回复ACK;</span><br><span class="line">处理rst标志位;</span><br><span class="line">根据cur_stream-&gt;state和TCP状态机进行处理;</span><br></pre></td></tr></table></figure>
-<h5 id="static-inline-void-FlushEpollEvents-mtcp-manager-t-mtcp-uint32-t-cur-ts"><a href="#static-inline-void-FlushEpollEvents-mtcp-manager-t-mtcp-uint32-t-cur-ts" class="headerlink" title="static inline void FlushEpollEvents(mtcp_manager_t mtcp, uint32_t cur_ts)"></a>static inline void FlushEpollEvents(mtcp_manager_t mtcp, uint32_t cur_ts)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">此函数全程对该核上的ep-&gt;epoll_lock上锁</span><br><span class="line">如果ep-&gt;mtcp_queue有内容且ep-&gt;usr_queue有剩余空间，把mtcpq的事件拷贝到usrq中</span><br><span class="line">如果epoll处于waiting状态且usrq或shadowq中有事件，发出epoll_cond信号唤醒应用线程</span><br></pre></td></tr></table></figure>
-<h5 id="static-inline-void-HandleApplicationCalls-mtcp-manager-t-mtcp-uint32-t-cur-ts"><a href="#static-inline-void-HandleApplicationCalls-mtcp-manager-t-mtcp-uint32-t-cur-ts" class="headerlink" title="static inline void HandleApplicationCalls(mtcp_manager_t mtcp, uint32_t cur_ts)"></a>static inline void HandleApplicationCalls(mtcp_manager_t mtcp, uint32_t cur_ts)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">把mtcp-&gt;connectq上所有stream取下来并AddtoControlList(mtcp, stream, cur_ts)，这些流在WriteTCPControlList()中被处理，发送control packet</span><br><span class="line">把mtcp-&gt;sendq上所有stream取下来并AddtoSendList(mtcp, stream)，这些流在WriteTCPDataList()中被处理</span><br><span class="line">把mtcp-&gt;ackq上所有stream取下来并EnqueueACK(mtcp, stream, cur_ts, ACK_OPT_AGGREGATE)，这些流在WriteTCPACKList()中被处理</span><br><span class="line">处理mtcp-&gt;closeq上的stream</span><br><span class="line">处理mtcp-&gt;resetq上的stream</span><br><span class="line">处理mtcp-&gt;destroyq上的stream</span><br></pre></td></tr></table></figure>
-<h5 id="static-inline-void-WritePacketsToChunks-mtcp-manager-t-mtcp-uint32-t-cur-ts"><a href="#static-inline-void-WritePacketsToChunks-mtcp-manager-t-mtcp-uint32-t-cur-ts" class="headerlink" title="static inline void WritePacketsToChunks(mtcp_manager_t mtcp, uint32_t cur_ts)"></a>static inline void WritePacketsToChunks(mtcp_manager_t mtcp, uint32_t cur_ts)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对g_sender和所有n_sender</span></span><br><span class="line">WriteTCPControlList();</span><br><span class="line">WriteTCPACKList();</span><br><span class="line">WriteTCPDataList();</span><br></pre></td></tr></table></figure>
-<h5 id="static-void-InterruptApplication-mtcp-manager-t-mtcp"><a href="#static-void-InterruptApplication-mtcp-manager-t-mtcp" class="headerlink" title="static void InterruptApplication(mtcp_manager_t mtcp)"></a>static void InterruptApplication(mtcp_manager_t mtcp)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果epoll处于waiting状态，发送mtcp-&gt;ep-&gt;epoll_cond信号</span><br><span class="line">检查每个端口的listener，发送pthread_cond_signal(&amp;listener-&gt;accept_cond)信号</span><br></pre></td></tr></table></figure>
-<h3 id="epoll-API"><a href="#epoll-API" class="headerlink" title="epoll API"></a>epoll API</h3><h5 id="int-mtcp-epoll-create-mctx-t-mctx-int-size"><a href="#int-mtcp-epoll-create-mctx-t-mctx-int-size" class="headerlink" title="int mtcp_epoll_create(mctx_t mctx, int size)"></a>int mtcp_epoll_create(mctx_t mctx, int size)</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在每个核的线程初始化的时候进行调用</span></span><br></pre></td></tr></table></figure>
-<h5 id="mtcp-epoll-ctl"><a href="#mtcp-epoll-ctl" class="headerlink" title="mtcp_epoll_ctl()"></a>mtcp_epoll_ctl()</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用于对MTCP_EPOLL_CTL_ADD，MTCP_EPOLL_CTL_MOD, MTCP_EPOLL_CTL_DEL三种epoll事件操作的处理</span></span><br></pre></td></tr></table></figure>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/07/17/hexo introduction/">hexo使用简介</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-07-17
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>Hexo(<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">中文官方网站</a>)是一个快速、简洁且高效的博客框架，让上百个页面在几秒内瞬间完成渲染。类似于jekyll、Octopress、WordPress，我们可以用hexo创建自己的博客，托管到GitHub上，绑定自己的域名，用MarkDown写文章。Hexo支持Github Flavored Markdown的所有功能, 甚至可以整合Octopress的大多数插件。并自己也拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。</p>
-<p>Hexo一个免费开源的博客程序，任何人都可以使用和修改。但是不同于WorldPress，Hexo由于需要使用GitHub, Git,Markdown, Node.js这样的工具，好多插件，都需要自己安装、设置环境，所以适合那些有一定计算机基础，喜欢折腾的人。</p>
-<h2 id="本地文件介绍"><a href="#本地文件介绍" class="headerlink" title="本地文件介绍"></a>本地文件介绍</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_config.yml	存放hexo博客的个人描述, 博客小图标地址, 头像地址等等.</span><br><span class="line"><span class="built_in">source</span> 		文件夹下的_posts 存放你所有的博文.md文件 你可以通过 hexo n <span class="string">"xxx"</span> 创建博客文章, 也可以直接把xxx.md 格式的文件直接拖入进去</span><br><span class="line">themes  	存放你的所有主题文件</span><br></pre></td></tr></table></figure>
-<h2 id="常用命令介绍"><a href="#常用命令介绍" class="headerlink" title="常用命令介绍"></a>常用命令介绍</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean 	清理缓存, 一般是在配置不能生效, 或者文章发布了不显示, 等等异常情况下使用的. 当然有时候清除浏览器缓存也是必须的操作.</span><br><span class="line">hexo g 		重新生成静态网页, 所有发布文章, 修改文章, 修改hexo配置, 修改主题配置等等操作, 都需要.</span><br><span class="line">hexo d 		让你的静态网页从本地部署到github</span><br><span class="line">hexo s 		你可以边写文章, 边使用这个命令在本地预览, 包括修改各种配置, 都可以预览.</span><br></pre></td></tr></table></figure>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
-<li><p>所有hexo xxx的操作, 必须用终端cd 你本地环境目录下, 然后才能用hexo xxx操作.</p>
-</li>
-<li><p>有时候明明已经新建, 修改了文章, 或者改变了博客或主题的各种配置, 并且生成部署了, 还是不能显示, 可能是github还没缓存好, 稍微等半分钟的样子, 再看看. 不行就清理浏览器缓存. 还是不行, 就hexo clean清理本地缓存. 再重新生成和部署</p>
-</li>
-</ol>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
-    
-  </nav>
-
-
-          </div>
-          
 
         </div>
-      </main>
+        <!-- Sidebar Container -->
+        <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
 
-      <footer id="footer" class="footer">
+            <!-- About Me -->
+            <section class="visible-md visible-lg" style="padding: 0 18px">
+                <div class="short-about">
+                    <!--侧边栏头像-->
+                    
+                    <h5><a href="/about/">Victor</a></h5>
+                    
+                    <hr>
+                    <!-- SNS Link 社交 -->
+                    <ul class="list-inline">
+                        
+                        
+                        
 
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:wuwenqing@ict.ac.cn" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a href="https://github.com/WenqingWu" class="iconfont icon-github" title="github"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://www.zhihu.com" class="iconfont icon-zhihu" title="zhihu"></a>
-        
-      
-    
-    
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
+                        
 
+                        
 
-<div class="copyright">
-  <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
-  </span>
+                        
 
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2015 - 
-    
-    2018
+                        
+                    </ul>
+                </div>
+            </section>
 
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Victor</span>
-  </span>
+            <!-- Featured Tags  标签 -->
+            
+
+            
+
+        </div>
+    </div>
 </div>
 
-      </footer>
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
 
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
-      </div>
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Victor&#39;s Blog 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
     </div>
+</footer>
 
-    
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
 
 
-    
-  
+
+<!-- Baidu Tongji -->
 
 
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  
-  
+  _st('install','','2.0.0');
+</script>
 
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
 
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.9.0"></script>
-
-  </body>
 </html>
