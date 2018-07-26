@@ -2,7 +2,7 @@
 <p>C语言中宏定义很常见，尤其是在内核源码中，宏定义大量存在，其中不乏一些灵活有趣的使用方式。</p>
 <p>这里简单整理宏定义中常见的一些符号：</p>
 <p>|符号|作用解释|示例|</p>
-<p>|:——–|:—————————|:————————-|<br>|#|将后面的 宏参数 进行字符串操作，就是将后面的参数用双引号括起来|例如 #id 为 “id”，id=6 时，#id 为“6”|<br>|##|用于连接|例如 <strong>initcall_##fn##id 为</strong>initcall_fnid，那么，fn = test_init，id = 6时，<strong>initcall_##fn##id 为 </strong>initcall_test_init6|<br>|@#|将后面的 宏参数 进行字符串操作，以一对单引用括起来（注意：只能用于有传入参数的宏定义中，且必须置于宏定义体中的参数名前）|#define makechar(x) @#X， a = makechar(b); 展开后变成了：a= ‘b’;|</p>
+<p>| :——– | :————————— | :————————- |<br>| # | 将后面的 宏参数 进行字符串操作，就是将后面的参数用双引号括起来|例如 #id 为 “id”，id=6 时，#id 为“6” |<br>| ## | 用于连接| 例如 <strong>initcall_##fn##id 为</strong>initcall_fnid，那么，fn = test_init，id = 6时，<strong>initcall_##fn##id 为 </strong>initcall_test_init6 |<br>| @# | 将后面的 宏参数 进行字符串操作，以一对单引用括起来（注意：只能用于有传入参数的宏定义中，且必须置于宏定义体中的参数名前） | #define makechar(x) @#X， a = makechar(b), 展开后变成了：a= ‘b’; |</p>
 <h2 id="gcc-fgnu89-inline选项"><a href="#gcc-fgnu89-inline选项" class="headerlink" title="gcc -fgnu89-inline选项"></a>gcc -fgnu89-inline选项</h2><p>在使用新版本gcc编译旧内核的代码时，内联（inline）函数可能会报警告“warning: inline function <code>xx</code> declared but never defined”。即“内联函数声明但未定义”。</p>
 <p>解决办法就是在 编译时加上选项 -fgnu89-inline</p>
 <h2 id="gcc-E选项"><a href="#gcc-E选项" class="headerlink" title="gcc -E选项"></a>gcc -E选项</h2><p>gcc 的 -E 选项只激活预处理，用于在预编译后停下来。使用时，你需要把它重定向到一个输出文件里面，生成预编译文件。看起来这个选项似乎很简单，用的不多，实则在调试定位错误的过程中很有用。</p>
