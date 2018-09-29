@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yoursite.com/"/>
-  <updated>2018-07-27T08:15:04.977Z</updated>
+  <updated>2018-09-29T08:08:46.474Z</updated>
   <id>https://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux 时间函数小结</title>
+    <link href="https://yoursite.com/2018/09/29/Linux-%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0%E5%B0%8F%E7%BB%93/"/>
+    <id>https://yoursite.com/2018/09/29/Linux-时间函数小结/</id>
+    <published>2018-09-29T07:58:26.162Z</published>
+    <updated>2018-09-29T08:08:46.474Z</updated>
+    
+    <content type="html"><![CDATA[<p>Linux下C语言开发，经常需要获取系统时间或做延时操作。Linux提供了一些应用层库函数，基本可以满足开发中的不同需求。现在简单整理一下Linux下的时间函数。</p><p>主要分为两类：时间获取函数 和 延时函数。</p><h2 id="时间获取函数"><a href="#时间获取函数" class="headerlink" title="时间获取函数"></a>时间获取函数</h2><h4 id="1-gettimeofday-struct-timeval-struct-timezone"><a href="#1-gettimeofday-struct-timeval-struct-timezone" class="headerlink" title="1. gettimeofday(struct timeval , struct timezone )"></a>1. gettimeofday(struct timeval <em>, struct timezone </em>)</h4><h4 id="2-clock-gettime-clockid-t-clk-id-struct-timespec-tp"><a href="#2-clock-gettime-clockid-t-clk-id-struct-timespec-tp" class="headerlink" title="2. clock_gettime(clockid_t clk_id,struct timespec *tp)"></a>2. clock_gettime(clockid_t clk_id,struct timespec *tp)</h4><h4 id="3-time-time-t-t"><a href="#3-time-time-t-t" class="headerlink" title="3. time(time_t *t)"></a>3. time(time_t *t)</h4><h2 id="延时函数"><a href="#延时函数" class="headerlink" title="延时函数"></a>延时函数</h2><h4 id="1-sleep-unsigned-int-seconds"><a href="#1-sleep-unsigned-int-seconds" class="headerlink" title="1. sleep(unsigned int seconds)"></a>1. sleep(unsigned int seconds)</h4><h4 id="2-usleep-useconds-t-usec"><a href="#2-usleep-useconds-t-usec" class="headerlink" title="2. usleep(useconds_t usec)"></a>2. usleep(useconds_t usec)</h4><h4 id="3-select-int-maxfdp1-fd-set-readset-fd-set-writeset-fd-set-exceptset-struct-timeval-timeout"><a href="#3-select-int-maxfdp1-fd-set-readset-fd-set-writeset-fd-set-exceptset-struct-timeval-timeout" class="headerlink" title="3. select(int maxfdp1, fd_set readset, fd_set writeset, fd_set exceptset,struct timeval timeout)"></a>3. select(int maxfdp1, fd_set <em>readset, fd_set </em>writeset, fd_set <em>exceptset,struct timeval </em>timeout)</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Linux下C语言开发，经常需要获取系统时间或做延时操作。Linux提供了一些应用层库函数，基本可以满足开发中的不同需求。现在简单整理一下Linux下的时间函数。&lt;/p&gt;
+&lt;p&gt;主要分为两类：时间获取函数 和 延时函数。&lt;/p&gt;
+&lt;h2 id=&quot;时间获取函数&quot;&gt;&lt;a hre
+      
+    
+    </summary>
+    
+      <category term="technology" scheme="https://yoursite.com/categories/technology/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>C语言开发调试经验记录</title>
