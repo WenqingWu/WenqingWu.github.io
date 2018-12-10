@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>Linux 下的PF_PACKET和SOCK_RAW</title>
+      <link href="/2018/12/10/Linux-%E4%B8%8B%E7%9A%84PF-PACKET%E5%92%8CSOCK-RAW/"/>
+      <url>/2018/12/10/Linux-%E4%B8%8B%E7%9A%84PF-PACKET%E5%92%8CSOCK-RAW/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;平时的工作学习中，尤其是开发调试的时候，经常会用到抓包工具。Linux下一般都是使用tcpdump（Windows下的开发接触较少，Windump也用过，没有深入研究过），最近调试DPDK程序时，也开始接触dpdk-pdump（DPDK程序的抓包工具，16.07版本开始支持），有时两个工具的抓包结果有出入，所以想调研一下两个工具的区别。上一篇博客中已经简单介绍了pdump工具，本文主要介绍和tcpdump紧密相关的PF_PACKET和SOCK_RAW。</p><h2 id="SOCK-RAW"><a href="#SOCK-RAW" class="headerlink" title="SOCK_RAW"></a>SOCK_RAW</h2><p>SOCK_RAW（注意一定要在root下使用）原始套接字编程可以接收到本机网卡上的数据帧或者数据包,对于监听网络的流量和分析是很有作用的。</p><p>一共可以有3种方式创建这种socket：</p><ol><li><p>socket(AF_INET, SOCK_RAW, IPPROTO_TCP|IPPROTO_UDP|IPPROTO_ICMP)发送接收ip数据包，不能用IPPROTO_IP，因为如果是用了IPPROTO_IP，系统根本就不知道该用什么协议。</p></li><li><p>socket(PF_PACKET, SOCK_RAW, htons(ETH_P_IP|ETH_P_ARP|ETH_P_ALL))发送接收以太网数据帧。</p></li><li><p>socket(AF_INET, SOCK_PACKET, htons(ETH_P_IP|ETH_P_ARP|ETH_P_ALL))过时了,不要用啊。</p></li></ol><h2 id="PF-PACKET"><a href="#PF-PACKET" class="headerlink" title="PF_PACKET"></a>PF_PACKET</h2><ol><li>介绍</li></ol><p>&emsp;&emsp;在linux中提供了PF_PACKET接口可以操作链路层的数据。</p><ol start="2"><li>使用方法</li></ol><p>&emsp;&emsp;定义一个pf_packet = socket(PF_SOCKET, SOCK_RAW, htons(ETH_P_RARP));<br>就可以利用函数sendto和recefrom来读取和发送链路层的数据包了（当然，发送ARP包，上面第三个参数要变为 htons(ETH_P_ARP)，或者IP的包为ETH_P_IP，可查看文件/usr/include/linux/if_ether.h文件看到所有支持的协议）。</p><ol start="3"><li>使用SOCK_RAW, SOCK_DGRAM和SOCK_PACKET的区别</li></ol><p>在socket的第一个参数使用PF_PACKET的时候，上述三种socket的类型都可以使用。但是有区别。</p><ul><li><p>(1)使用SOCK_RAW发送的数据必须包含链路层的协议头，接受得到的数据包，包含链路层协议头。而使用SOCK_DGRAM则都不含链路层的协议头。</p></li><li><p>(2)SOCK_PACKET也是可以使用的，但是已经废弃，以后不保证还能支持，不推荐使用。</p></li><li><p>(3)在使用SOCK_RAW或SOCK_DGRAM和SOCK_PACKET时，在sendto和recvfrom中使用的地址类型不同，前两者使用sockaddr_ll类型的地址，而后者使用sockaddr类型的地址。</p></li><li><p>(4)如socket的第一个参数使用PF_INET，第二个参数使用SOCK_RAW，则可以得到原始的IP包。</p></li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.cnblogs.com/cdwodm/archive/2012/09/22/2698163.html" target="_blank" rel="noopener">Linux下PF_PACKET的使用</a><br><a href="https://blog.csdn.net/notbaron/article/details/79735414" target="_blank" rel="noopener">tcpdump源码分析(2)——抓包原理</a></p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Linux - TCP/IP - DCN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>pdump DPDK抓包工具</title>
       <link href="/2018/12/08/pdump-DPDK%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/"/>
       <url>/2018/12/08/pdump-DPDK%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/</url>
