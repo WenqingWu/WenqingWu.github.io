@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>https://yoursite.com/2019/03/12/Centos-%E5%8F%91%E8%A1%8C%E7%89%88%E5%8F%8A%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/</loc>
+    <lastmod>2019-03-12T09:01:47.687Z</lastmod>
+    <data>
+        <display>
+        <title>Centos 发行版及内核升级</title>
+        <pubTime>2019-03-12T08:51:23.000Z</pubTime>
+        
+        <tag>Linux OS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://yoursite.com/2018/12/10/Linux-%E4%B8%8B%E7%9A%84PF-PACKET%E5%92%8CSOCK-RAW/</loc>
     <lastmod>2018-12-10T06:52:30.010Z</lastmod>
     <data>
@@ -67,9 +84,9 @@
         <title>mTCP Code Reading</title>
         <pubTime>2018-07-18T09:24:25.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
         <tag>mTCP</tag>
+         
+        <tag>Linux</tag>
          
         <tag>DCN</tag>
          
