@@ -104,7 +104,7 @@
             
             <tag> Linux </tag>
             
-            <tag> C </tag>
+            <tag> C语言 </tag>
             
         </tags>
       
@@ -129,9 +129,9 @@
             
             <tag> mTCP </tag>
             
-            <tag> DCN </tag>
-            
             <tag> DPDK </tag>
+            
+            <tag> 用户态协议栈 </tag>
             
         </tags>
       
