@@ -46,10 +46,16 @@
       <url>/2018/12/10/Linux-%E4%B8%8B%E7%9A%84PF-PACKET%E5%92%8CSOCK-RAW/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;平时的工作学习中，尤其是开发调试的时候，经常会用到抓包工具。Linux下一般都是使用tcpdump（Windows下的开发接触较少，Windump也用过，没有深入研究过），最近调试DPDK程序时，也开始接触dpdk-pdump（DPDK程序的抓包工具，16.07版本开始支持），有时两个工具的抓包结果有出入，所以想调研一下两个工具的区别。上一篇博客中已经简单介绍了pdump工具，本文主要介绍和tcpdump紧密相关的PF_PACKET和SOCK_RAW。</p><h2 id="SOCK-RAW"><a href="#SOCK-RAW" class="headerlink" title="SOCK_RAW"></a>SOCK_RAW</h2><p>SOCK_RAW（注意一定要在root下使用）原始套接字编程可以接收到本机网卡上的数据帧或者数据包,对于监听网络的流量和分析是很有作用的。</p><p>一共可以有3种方式创建这种socket：</p><ol><li><p>socket(AF_INET, SOCK_RAW, IPPROTO_TCP|IPPROTO_UDP|IPPROTO_ICMP)发送接收ip数据包，不能用IPPROTO_IP，因为如果是用了IPPROTO_IP，系统根本就不知道该用什么协议。</p></li><li><p>socket(PF_PACKET, SOCK_RAW, htons(ETH_P_IP|ETH_P_ARP|ETH_P_ALL))发送接收以太网数据帧。</p></li><li><p>socket(AF_INET, SOCK_PACKET, htons(ETH_P_IP|ETH_P_ARP|ETH_P_ALL))过时了,不要用啊。</p></li></ol><h2 id="PF-PACKET"><a href="#PF-PACKET" class="headerlink" title="PF_PACKET"></a>PF_PACKET</h2><ol><li>介绍</li></ol><p>&emsp;&emsp;在linux中提供了PF_PACKET接口可以操作链路层的数据。</p><ol start="2"><li>使用方法</li></ol><p>&emsp;&emsp;定义一个pf_packet = socket(PF_SOCKET, SOCK_RAW, htons(ETH_P_RARP));<br>就可以利用函数sendto和recefrom来读取和发送链路层的数据包了（当然，发送ARP包，上面第三个参数要变为 htons(ETH_P_ARP)，或者IP的包为ETH_P_IP，可查看文件/usr/include/linux/if_ether.h文件看到所有支持的协议）。</p><ol start="3"><li>使用SOCK_RAW, SOCK_DGRAM和SOCK_PACKET的区别</li></ol><p>在socket的第一个参数使用PF_PACKET的时候，上述三种socket的类型都可以使用。但是有区别。</p><ul><li><p>(1)使用SOCK_RAW发送的数据必须包含链路层的协议头，接受得到的数据包，包含链路层协议头。而使用SOCK_DGRAM则都不含链路层的协议头。</p></li><li><p>(2)SOCK_PACKET也是可以使用的，但是已经废弃，以后不保证还能支持，不推荐使用。</p></li><li><p>(3)在使用SOCK_RAW或SOCK_DGRAM和SOCK_PACKET时，在sendto和recvfrom中使用的地址类型不同，前两者使用sockaddr_ll类型的地址，而后者使用sockaddr类型的地址。</p></li><li><p>(4)如socket的第一个参数使用PF_INET，第二个参数使用SOCK_RAW，则可以得到原始的IP包。</p></li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.cnblogs.com/cdwodm/archive/2012/09/22/2698163.html" target="_blank" rel="noopener">Linux下PF_PACKET的使用</a><br><a href="https://blog.csdn.net/notbaron/article/details/79735414" target="_blank" rel="noopener">tcpdump源码分析(2)——抓包原理</a></p>]]></content>
       
+      <categories>
+          
+          <category> Technology </category>
+          
+      </categories>
+      
       
         <tags>
             
-            <tag> Linux - TCP/IP - DCN </tag>
+            <tag> Linux - TCP/IP </tag>
             
         </tags>
       
@@ -60,6 +66,12 @@
       <link href="/2018/12/08/pdump-DPDK%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/"/>
       <url>/2018/12/08/pdump-DPDK%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自从加入中心的网络组，一直在参与用户态协议栈的相关工作。目前接触的用户态一般都使用Intel的DPDK包转发框架，实现kernel-bypass。网卡被DPDK接管后，内核的ifconfig，tcpdump等工具将不再适用（由mTCP中修改后的DPDK绑定的网卡，是可以通过ifconfig命令看到的），所以开发调试中，抓包就成了问题。一般对端没有使用DPDK的话，会选择在对端使用tcpdump抓包或者经过交换机，在交换机抓包。但是，如果想在DPDK的出入口抓包，或者收发两端都使用DPDK，使用Linux提供的工具直接抓包就很难实现。本文主要介绍DPDK的抓包工具pdump。</p><p>pdump库是在DPDK 16.07版本引入的，提供了一个抓包调试功能。在$(RTE_SDK)/app目录下有一个dpdk-pdump工具，可以用于抓取指定接口、队列 的网络包。</p><h2 id="pdump抓包原理"><a href="#pdump抓包原理" class="headerlink" title="pdump抓包原理"></a>pdump抓包原理</h2><ul><li><p>pdump抓包采用的是 <strong>CS</strong> 模式，即应用进程作为server，拷贝数据包，提供给dpdk-pdump；dpdk-dump作为client，接收数据包，并dump到pcap文件中</p></li><li><p>dpdk-pdump作为 <strong>secondary</strong> 进程 依附于 <strong>primary</strong> 进程</p></li><li><p>primary进程中启动 server 端，初始化pdump抓包框架任务；</p></li><li><p>dpdk-pdump进程是作为 client端 向primary进程发送开始/停止抓包请求；</p></li><li><p>primary进程 拷贝 一份数据包到ring中，secondary进程从ring中读取出来，保存为pcap文件；</p></li></ul><p>使用 DPDK pdump的抓包框架如下图所示：</p><p><img src="/2018/12/08/pdump-DPDK抓包工具/pdump-framework.png" alt=""></p><h2 id="pdump工作流程"><a href="#pdump工作流程" class="headerlink" title="pdump工作流程"></a>pdump工作流程</h2><p><img src="/2018/12/08/pdump-DPDK抓包工具/pdump-process.png" alt=""></p><ol><li><p>A采用rx-worker-tx的模型进行报文的处理，其中调用rte_pdump_init会启动dump_thread；</p></li><li><p>pdump采用secondary模式启动，与A共享mmap映射的内存空间；</p></li><li><p>pdump启动过程中会创建mbuf_pool和ring，用于后续接收A中报文的拷贝；</p></li><li><p>pdump会通过rte_eth_dev_attach方式创建vdev，且采用eth_pcap驱动进行初始化，留意init中的open_tx_pcap；</p></li><li><p>pdump向A发送开启抓包的消息（UDP方式），消息内容为前面创建的mbuf_pool、ring以及抓包的port和对应的queue；</p></li><li><p>A中的dump_thread收到消息后，获取相应信息，在port上注册call_back函数；</p></li><li><p>对于开启抓包的port，在rx_burst/tx_burst时会先调用call_back，这里对应pdump_rx/pdump_tx，它会由mbuf_pool中分配mbuf进行报文的复制，同时enqueue到ring中；（mbuf_pool和ring在步骤3中创建，在步骤5中传递给A）；</p></li><li><p>pdump进行ring的dequeue操作获取拷贝报文；</p></li><li><p>拷贝报文通过rte_eth_tx_burst发送给vdev；</p></li><li><p>vdev通过eth_pcap的tx_pkt_burst发送报文，即调用eth_pcap_tx_dumper完成报文的pcap存储（pcap_dump）。</p></li></ol><h2 id="pdump使用"><a href="#pdump使用" class="headerlink" title="pdump使用"></a>pdump使用</h2><h3 id="1-编译选项"><a href="#1-编译选项" class="headerlink" title="1.编译选项"></a>1.编译选项</h3><ul><li><p>pdump依赖 <em>libpcap</em> 库和 <em>libpcap-dev</em> 库</p></li><li><p>依赖基于libpcap的PMD驱动，使用时需要打开config中的PCAP和PDUMP，即</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CONFIG_RTE_LIBRTE_PMD_PCAP=y （config/common_base）</span><br><span class="line">CONFIG_RTE_LIBRTE_PDUMP=y</span><br></pre></td></tr></table></figure><h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h3><ul><li>在程序初始化过程中调用rte_pdump_init，启动dump_thread进行消息的监听：</li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> RTE_LIBRTE_PDUMP</span></span><br><span class="line">    <span class="comment">/* initialize packet capture framework */</span></span><br><span class="line">    rte_pdump_init(<span class="literal">NULL</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure><ul><li>在程序退出前调用rte_pdump_uninit进行资源的释放：</li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> RTE_LIBRTE_PDUMP</span></span><br><span class="line">    <span class="comment">/* uninitialize packet capture framework */</span></span><br><span class="line">    rte_pdump_uninit();</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure><ul><li>启动pdump程序，发送抓包命令，进行抓包。</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://doc.dpdk.org/guides/howto/packet_capture_framework.html" target="_blank" rel="noopener">DPDK pdump Library and pdump Tool</a><br><a href="https://www.jianshu.com/p/bc2bde0e4442" target="_blank" rel="noopener">DPDK capture原理</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Technology </category>
+          
+      </categories>
       
       
         <tags>
@@ -78,7 +90,7 @@
       
       <categories>
           
-          <category> technology </category>
+          <category> Technology </category>
           
       </categories>
       
@@ -122,7 +134,7 @@
       
       <categories>
           
-          <category> technology </category>
+          <category> Technology </category>
           
       </categories>
       
