@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yoursite.com/"/>
-  <updated>2019-08-21T14:25:28.022Z</updated>
+  <updated>2019-08-21T14:26:36.582Z</updated>
   <id>https://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://yoursite.com/2019/08/21/Linux%E5%B8%B8%E7%94%A8%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/"/>
     <id>https://yoursite.com/2019/08/21/Linux常用调试工具/</id>
     <published>2019-08-21T14:14:38.000Z</published>
-    <updated>2019-08-21T14:25:28.022Z</updated>
+    <updated>2019-08-21T14:26:36.582Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>平时在Linux平台进行开发工作时，不可避免的会遇到一些程序上的问题。Linux提供了不少方便的调试工具，可以用来快速定位程序中的问题，提高开发效率。</p><p>本文列举了几个常用的调试工具。</p><h3 id="gdb"><a href="#gdb" class="headerlink" title="gdb"></a>gdb</h3><h3 id="strace"><a href="#strace" class="headerlink" title="strace"></a>strace</h3><h3 id="valgrind"><a href="#valgrind" class="headerlink" title="valgrind"></a>valgrind</h3><h3 id="Address-Sanitizer"><a href="#Address-Sanitizer" class="headerlink" title="Address Sanitizer"></a>Address Sanitizer</h3><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://www.cnblogs.com/ggjucheng/archive/2011/12/14/2288004.html" target="_blank" rel="noopener">GDB详解</a><br><a href="https://www.jianshu.com/p/33521124bdf2" target="_blank" rel="noopener">神器之strace</a><br><a href="https://www.cnblogs.com/AndyStudy/p/6409287.html" target="_blank" rel="noopener">valgrind 工具介绍和简单的使用</a><br><a href="https://wizardforcel.gitbooks.io/100-gcc-tips/content/address-sanitizer.html" target="_blank" rel="noopener">利用Address Sanitizer工具检查内存访问错误</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>平时在Linux平台进行开发工作时，不可避免的会遇到一些程序上的问题。Linux提供了不少方便的调试工具，可以用来快速定位程序中的问题，提高开发效率。</p><p>本文列举了几个常用的调试工具。</p><p>(待更新)</p><h3 id="gdb"><a href="#gdb" class="headerlink" title="gdb"></a>gdb</h3><h3 id="strace"><a href="#strace" class="headerlink" title="strace"></a>strace</h3><h3 id="valgrind"><a href="#valgrind" class="headerlink" title="valgrind"></a>valgrind</h3><h3 id="Address-Sanitizer"><a href="#Address-Sanitizer" class="headerlink" title="Address Sanitizer"></a>Address Sanitizer</h3><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://www.cnblogs.com/ggjucheng/archive/2011/12/14/2288004.html" target="_blank" rel="noopener">GDB详解</a><br><a href="https://www.jianshu.com/p/33521124bdf2" target="_blank" rel="noopener">神器之strace</a><br><a href="https://www.cnblogs.com/AndyStudy/p/6409287.html" target="_blank" rel="noopener">valgrind 工具介绍和简单的使用</a><br><a href="https://wizardforcel.gitbooks.io/100-gcc-tips/content/address-sanitizer.html" target="_blank" rel="noopener">利用Address Sanitizer工具检查内存访问错误</a></p>]]></content>
     
     <summary type="html">
     
