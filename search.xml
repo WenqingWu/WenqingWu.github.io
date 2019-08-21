@@ -36,8 +36,6 @@
             
             <tag> Technology </tag>
             
-            <tag> OS </tag>
-            
         </tags>
       
     </entry>
@@ -66,7 +64,7 @@
       
         <tags>
             
-            <tag> Linux - DPDK - DCN </tag>
+            <tag> Linux - DPDK </tag>
             
         </tags>
       
@@ -85,6 +83,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> Linux - C语言 </tag>
+            
+        </tags>
+      
     </entry>
     
     <entry>
@@ -95,7 +99,7 @@
       
       <categories>
           
-          <category> technology </category>
+          <category> Technology </category>
           
       </categories>
       
@@ -145,16 +149,16 @@
       
       <categories>
           
-          <category> technology </category>
+          <category> Technology </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> technology </tag>
+            <tag> Blog </tag>
             
-            <tag> hexo </tag>
+            <tag> Hexo </tag>
             
         </tags>
       
