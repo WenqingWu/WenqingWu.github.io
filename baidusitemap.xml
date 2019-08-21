@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>https://yoursite.com/2019/03/12/CentOS-%E5%8F%91%E8%A1%8C%E7%89%88%E5%8F%8A%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/</loc>
+    <lastmod>2019-08-21T14:34:17.959Z</lastmod>
+    <data>
+        <display>
+        <title>Centos 发行版及内核升级</title>
+        <pubTime>2019-03-12T08:51:23.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>CentOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Technology" url="https://yoursite.com/categories/Technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yoursite.com/2019/08/21/Linux%E5%B8%B8%E7%94%A8%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2019-08-21T14:33:57.751Z</lastmod>
+    <data>
+        <display>
+        <title>Linux常用调试工具</title>
+        <pubTime>2019-08-21T14:14:38.000Z</pubTime>
+        
+        <tag>Linux - Debug</tag>
+         
+         
+           
+             
+              <breadCrumb title="Technology" url="https://yoursite.com/categories/Technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://yoursite.com/2018/09/29/Linux-%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0%E5%B0%8F%E7%BB%93/</loc>
     <lastmod>2019-08-21T14:33:31.564Z</lastmod>
     <data>
@@ -127,45 +169,6 @@
            
              
               <breadCrumb title="Technology" url="https://yoursite.com/categories/Technology/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://yoursite.com/2019/03/12/CentOS-%E5%8F%91%E8%A1%8C%E7%89%88%E5%8F%8A%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/</loc>
-    <lastmod>2019-08-21T14:29:19.243Z</lastmod>
-    <data>
-        <display>
-        <title>Centos 发行版及内核升级</title>
-        <pubTime>2019-03-12T08:51:23.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>Technology</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://yoursite.com/2019/08/21/Linux%E5%B8%B8%E7%94%A8%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2019-08-21T14:26:36.582Z</lastmod>
-    <data>
-        <display>
-        <title>Linux常用调试工具</title>
-        <pubTime>2019-08-21T14:14:38.000Z</pubTime>
-        
-        <tag>Linux - Debug</tag>
-         
-         
-           
-             
-              <breadCrumb title="technology" url="https://yoursite.com/categories/technology/"/>
           
         </display>
     </data>
